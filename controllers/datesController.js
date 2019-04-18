@@ -34,9 +34,9 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
-  findByType: function(req, res){
+  saveDate: function(req, res){
     db.Dates
-    .find({ type: req.params.type})
+    .create(req.body)
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err))
   }
