@@ -2,6 +2,7 @@ import React from "react";
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import Card from "../../components/Jumbotron/card";
 import {Container, Col, Row} from "../../components/Grid";
+import {Link} from "react-router-dom";
 function Home(){
     return(
     <Container fluid>
@@ -12,7 +13,9 @@ function Home(){
 <Row>
     <Col size = "md-2"></Col>
 <Col size="md-3">
-    <Card>At-Home</Card>
+    <Card>At-Home
+    <Link to="/dates/atHome">← To dates!</Link>
+    </Card>
 </Col>
 <Col size = "md-3">
     <Card>Low-Budget</Card>

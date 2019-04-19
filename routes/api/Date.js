@@ -14,6 +14,6 @@ router
   .delete(datesController.remove);
   
 router
-    .route("/:type")
-    .get(datesController.findAll)
+    .route("/")
+    .post(datesController.create)
 module.exports = router;
