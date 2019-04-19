@@ -4,8 +4,8 @@ const foodToForkApi = `${process.env.REACT_APP_API_Key}`;
 
 export default {
   // Gets all books
-  saveDates: function() {
-    return axios.post("/api/dates");
+  saveDates: function(dateData) {
+    return axios.post("/api/dates", dateData);
   },
   // Gets the book with the given id
   getSavedDates: function() {
