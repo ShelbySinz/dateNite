@@ -21,7 +21,10 @@ function Home(){
     <Card>Low-Budget</Card>
 </Col>
 <Col size= "md-3">
-    <Card>Outdoors</Card>
+    <Card>Outdoors
+    <Link to="/dates/atHome">← To dates!</Link>
+    </Card>
+    
 </Col>
 </Row>
 <br></br>
