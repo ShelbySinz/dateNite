@@ -1,12 +1,17 @@
 import React from "react";
+import "./style.css";
 
-function Card({ children }) {
+function Card(props) {
   return (
     <div
-      style={{ height: 150, width:200,clear:"both", paddingTop: 65, textAlign: "center" }}
+      style={{ textAlign: "center" }}
       className="card"
     >
-      {children}
+      <div className="img-container"
+      >
+        <img alt={props.name} src={props.image} />
+      </div>
+        {props.children}
     </div>
   );
 }
