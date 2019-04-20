@@ -4,28 +4,16 @@ import {List, ListItem} from "../../components/List";
 import {Container,Row, Col} from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import API from "../../utils/API";
-import HomeJson from "../../athome.json";
+import HomeJson from "../../movies.json";
 import SaveBtn from "../../components/SaveBtn";
 
-class AtHome extends Component {
+class MoviesTv extends Component {
     state = {
-        recipes: [],
+        movies: [],
         search: "",
         
       };
-    
-      // When the component mounts, load all books and save them to this.state.books
-    //   componentDidMount() {
-    //    this.handleApiSubmit("harry-potter");
-    //   }
-    
-      // Loads all books  and sets them to this.state.books
-      
-    
-      // Deletes a book from the database with a given id, then reloads books from the db
-      
-    
-      // Handles updating component state when the user types into the input field
+
       handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
@@ -35,8 +23,8 @@ class AtHome extends Component {
     
       handleApiSubmit = query => {
         
-        API.getRecipe(query).then( res => this.setState({recipes: res.data.recipes}))
-        console.log(this.state.recipes)
+        API.getMovie(query).then( res => this.setState({movies: res.data}))
+        console.log(this.state.movies)
       }
     
       handleFormSubmit = event => {
@@ -52,7 +40,7 @@ class AtHome extends Component {
             <Row>
               <Col size="md-12">
                 <Jumbotron>
-                  <h1>At Home Date Ideas!</h1>
+                  <h1>Movies and Tv Date Ideas!</h1>
                   </Jumbotron>
 
                   </Col>
@@ -75,7 +63,6 @@ class AtHome extends Component {
                             <p>What you Need: {dates.whatYouNeed}</p>
                            
                            <br></br>
-                           <p>Suggested Recipe: {dates.SuggestedRecipe}</p>
                            
                            <br></br>
                            <br></br>
@@ -98,21 +85,21 @@ class AtHome extends Component {
                     value={this.state.search}
                     onChange={this.handleInputChange}
                     name="search"
-                    placeholder="(chicken)"
+                    placeholder="The-Matrix"
                   />
               
                   <FormBtn
                     onClick={this.handleFormSubmit}
                   >
-                    Find recipes
+                    Find Movies
                   </FormBtn>
                 </form>
               </Col>
               <Col size="md-6 sm-12">
                
-                {this.state.recipes.length ? (
+                {this.state.movies.length ? (
                   <List>
-                    {this.state.recipes.map(food => {
+                    {this.state.movies.map(food => {
                       console.log(food)
                       
                       return (
@@ -121,7 +108,7 @@ class AtHome extends Component {
                            <strong>{food.title}</strong> 
                            
                            <br></br>
-                           <img className={"img-fluid"} src={food.image_url} alt={food.title}></img>
+                           <img src={food.image_url} alt={food.title}></img>
                            <br></br>
                            <br></br>
                          <a href={food.publisher_url} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>
@@ -142,6 +129,4 @@ class AtHome extends Component {
       }
     }
     
-    export default AtHome;
-    
-
+    export default MoviesTv;

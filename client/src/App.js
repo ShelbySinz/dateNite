@@ -6,10 +6,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home/home";
 import HomeDates from "./pages/atHome/homeDate";
+import MovieDates from "./pages/Movies/movieDate";
 // import Saved from "./pages/Saved";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/NavBar/Nav";
-require('dotenv').config();
+
 
 class App extends Component {
   render() {
@@ -29,6 +30,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
            <Route exact path="/dates/atHome" component={HomeDates} /> 
+           <Route exact path="/dates/movies" component={MovieDates}/>
           {/* <Route exact path="/dates/saved" component={Saved} /> */} 
           <Route component={NoMatch} />
         </Switch>
