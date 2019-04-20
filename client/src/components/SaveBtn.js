@@ -6,7 +6,7 @@ import React from "react";
 function SaveBtn(props) {
   return (
     <span className="delete-btn" {...props} role="button" tabIndex="0">
-      <i class="fas fa-heart"></i>
+      <i className="fas fa-heart"></i>
     </span>
   );
 }

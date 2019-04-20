@@ -4,13 +4,13 @@ import {List, ListItem} from "../../components/List";
 import {Container,Row, Col} from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import API from "../../utils/API";
-import HomeJson from "../../movies.json";
+import movieJson from "../../movies.json";
 import SaveBtn from "../../components/SaveBtn";
 
 class MoviesTv extends Component {
     state = {
         movies: [],
-        search: "",
+        search: ""
         
       };
 
@@ -49,7 +49,7 @@ class MoviesTv extends Component {
                    <Col size= "md-12">
                   <List>
                       
-                    {HomeJson.map( dates => {
+                    {movieJson.map( dates => {
                       console.log(dates)
                       
                       return (
