@@ -1,11 +1,12 @@
 
 import axios from "axios";
-const foodToForkApi = `${process.env.REACT_APP_API_Key}`;
+require("dotenv").config();
+
 
 export default {
   // Gets all books
-  saveDates: function() {
-    return axios.post("/api/dates");
+  saveDates: function(dateData) {
+    return axios.post("/api/dates", dateData);
   },
   // Gets the book with the given id
   getSavedDates: function() {
@@ -21,6 +22,12 @@ export default {
   },
 
   getRecipe : function(query){
-     return axios.get("https://www.food2fork.com/api/search?key="+foodToForkApi+"&q="+query)
+    const RECIPE_API = "11fc0e368f94746dc17947610fa5ac19";
+     return axios.get("https://www.food2fork.com/api/search?key="+RECIPE_API+"&q="+query)
+  },
+
+  getMovie : function(query){
+    const MOVIE_API = "&apikey=trilogy";
+     return axios.get("https://www.omdbapi.com/?t="+query+MOVIE_API)
   }
 };
