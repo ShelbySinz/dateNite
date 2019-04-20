@@ -13,8 +13,8 @@ function Home(){
 <Row>
     <Col size = "md-2"></Col>
 <Col size="md-3">
-    <Card>At-Home
-    <Link to="/dates/atHome">← To dates!</Link>
+    <Card>
+    <Link to="/dates/atHome">← At Home!</Link>
     </Card>
 </Col>
 <Col size = "md-3">
@@ -31,7 +31,9 @@ function Home(){
 <Card>Restaurants and Bars</Card>
 </Col>
 <Col size="md-3">
-<Card>Movies and TV</Card>
+<Card>
+    <Link to="/dates/movies">← Movies and Tv!</Link>
+</Card>
 </Col>
 </Row>
 </Container>

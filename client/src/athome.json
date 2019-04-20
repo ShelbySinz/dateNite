@@ -4,14 +4,16 @@
     "type": "At-home",
     "description":
       "Search our site for fondue recipes. Have a fun night dipping foods in cheese!",
-    "whatYouNeed": "finger foods, fondue recipe"
+    "whatYouNeed": "finger foods, fondue recipe",
+    "SuggestedRecipe": "Cheese Fondue"
   },
   {
     "title": "Theme night",
     "type": "At-home",
     "description":
       "Dress up like your favorite decade and have a themed dinner!",
-    "whatYouNeed": "dinner, fun outfits"
+    "whatYouNeed": "dinner, fun outfits",
+    "SuggestedRecipe": "Chicken"
     
   }
 ]
