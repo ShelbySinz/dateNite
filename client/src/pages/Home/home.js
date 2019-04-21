@@ -3,42 +3,68 @@ import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import Card from "../../components/Jumbotron/card";
 import {Container, Col, Row} from "../../components/Grid";
 import {Link} from "react-router-dom";
-function Home(){
-    return(
-    <Container fluid>
-    
-       <Jumbotron>
-         <h1>Welcome to DateNite!</h1>
-       </Jumbotron>
-<Row>
-    <Col size = "md-2"></Col>
-<Col size="md-3">
-    <Card>
-    <Link to="/dates/atHome">← At Home!</Link>
-    </Card>
-</Col>
-<Col size = "md-3">
-    <Card>Low-Budget</Card>
-</Col>
-<Col size= "md-3">
-    <Card>Outdoors</Card>
-</Col>
-</Row>
-<br></br>
-<Row>
-<Col size = "md-3"></Col> 
-<Col size="md-3">
-<Card>Restaurants and Bars</Card>
-</Col>
-<Col size="md-3">
-<Card>
-    <Link to="/dates/movies">← Movies and Tv!</Link>
-</Card>
-</Col>
-</Row>
-</Container>
+import homePage from "../../tiles_homePage.json"
 
-    );
+function Home() {
+
+      
+        return(
+
+            <Container fluid>
+            
+            <Jumbotron>
+                <h1>Welcome to DateNite!</h1>
+            </Jumbotron>
+                <Row>
+                    <Col size = "md-2"></Col>
+                        <Col size="md-3">
+                            <Card
+                                name={homePage[0].name}
+                                image={homePage[0].image}>
+                            <Link to="/dates/atHome">← At Home!</Link>                            
+                            </Card>
+                        </Col>
+                        <Col size = "md-3">
+                            <Card
+                                name={homePage[1].name}
+                                image={homePage[1].image}
+                            >
+                            <Link to="/dates/lowBudget">← Low-Budget!</Link>
+                            </Card>            
+                        </Col>
+                        <Col size= "md-3">
+                            <Card
+                                name={homePage[2].name}
+                                image={homePage[2].image}
+                            >
+                            <Link to="/dates/outdoors">← Outdoors!</Link>
+                            </Card>
+                        </Col>
+                </Row>
+            <br></br>
+                <Row>
+                    <Col size = "md-3"></Col> 
+                        <Col size="md-3">
+                            <Card
+                                name={homePage[3].name}
+                                image={homePage[3].image}
+                                >
+                                <Link to="/dates/restaurants">← Restaurants and Bars!</Link>
+                                </Card>
+                        </Col>
+                    <Col size="md-3">
+                        <Card
+                            name={homePage[4].name}
+                            image={homePage[4].image}
+                            >
+                            <Link to="/dates/movies">← Movies and TV!</Link>
+                        </Card>
+                </Col>
+            </Row>
+                </Container>
+
+            );
+
 }
 
 export default Home; 

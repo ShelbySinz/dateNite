@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "At Home",
+    "image": "https://www.shiftingroots.com/wp-content/uploads/2017/01/Valentines-Dates-at-Home-Insta-1024x1024.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Low Budget",
+    "image": "https://i.iheart.com/v3/re/new_assets/5c4f5eea7e5d2e0c0d769983?ops=max(650,0),quality(80)"
+  },
+  {
+    "id": 3,
+    "name": "Outdoor",
+    "image": "http://karastout.com/wp-content/uploads/2014/05/Vendor-gallery-Andrew-and-Raquel-0012.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Restaurant",
+    "image": "https://assets3.thrillist.com/v1/image/1775343/size/tmg-article_main_wide_2x.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Movies",
+    "image": "https://www.wheninmanila.com/wp-content/uploads/2016/12/image-0-02-06-bfb0934f08754a82adacca59c0357e6dc11bd234b90eb343477be21223fa55ed-V-e1480952483812.jpg"
+  }  
+]
