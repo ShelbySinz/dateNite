@@ -4,15 +4,19 @@ import {List, ListItem} from "../../components/List";
 import {Container,Row, Col} from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import API from "../../utils/API";
-import HomeJson from "../../movies.json";
+import movieJson from "../../movies.json";
 import SaveBtn from "../../components/SaveBtn";
 
 class MoviesTv extends Component {
     state = {
-        movies: [],
+        movies: {},
         search: "",
         
       };
+
+     componentDidMount(){
+       this.handleApiSubmit("elf")
+     }
 
       handleInputChange = event => {
         const { name, value } = event.target;
@@ -30,7 +34,7 @@ class MoviesTv extends Component {
       handleFormSubmit = event => {
         event.preventDefault();
         this.handleApiSubmit(this.state.search)
-        
+        console.log(this.state.search);
       }
      
     
@@ -49,7 +53,7 @@ class MoviesTv extends Component {
                    <Col size= "md-12">
                   <List>
                       
-                    {HomeJson.map( dates => {
+                    {movieJson.map( dates => {
                       console.log(dates)
                       
                       return (
@@ -97,31 +101,28 @@ class MoviesTv extends Component {
               </Col>
               <Col size="md-6 sm-12">
                
-                {this.state.movies.length ? (
-                  <List>
-                    {this.state.movies.map(food => {
-                      console.log(food)
-                      
-                      return (
-                        <ListItem key={food.title}  >
+                 
+                    <List>
+                    
+                     
+
+                     
+                        <ListItem key={this.state.movies.Title}  >
                            
-                           <strong>{food.title}</strong> 
-                           
+                          <strong>Name: {this.state.movies.Title}</strong> 
+                          <p>Plot: {this.state.movies.Plot}</p>
+                           <p>Release Date: {this.state.movies.Released}</p>
                            <br></br>
-                           <img src={food.image_url} alt={food.title}></img>
+
+                           <img src={this.state.movies.Poster} alt={this.state.movies.Title}></img>
                            <br></br>
                            <br></br>
-                         <a href={food.publisher_url} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>
-                          {/* <SaveBtn   
-                            onClick={() => API.getRecipe({title: book.volumeInfo.title, authors: book.volumeInfo.authors, synopsis: book.volumeInfo.description, link: book.volumeInfo.previewLink,image: book.volumeInfo.imageLinks.smallThumbnail})}                                     
-                          >Save</SaveBtn> */}
+                         <a href={this.state.movies.Website} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>
+                          
                         </ListItem>
-                      );
-                    })}
+                      
                   </List>
-                ) : (
-                  <h3>No Results to Display</h3>
-                )}
+              
               </Col>
             </Row>
           </Container>
