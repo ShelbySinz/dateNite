@@ -27,7 +27,7 @@ export default {
   },
 
   getMovie : function(query){
-    const MOVIE_API = "apikey=trilogy";
-     return axios.get("https://www.omdbapi.com/?"+MOVIE_API+"&t="+query)
+    const MOVIE_API = "&apikey=trilogy";
+     return axios.get("http://www.omdbapi.com/?t="+query+MOVIE_API)
   }
 };

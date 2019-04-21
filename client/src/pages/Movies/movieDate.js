@@ -10,9 +10,11 @@ import SaveBtn from "../../components/SaveBtn";
 class MoviesTv extends Component {
     state = {
         movies: [],
-        search: ""
+        search: "",
         
       };
+
+     
 
       handleInputChange = event => {
         const { name, value } = event.target;
@@ -30,7 +32,7 @@ class MoviesTv extends Component {
       handleFormSubmit = event => {
         event.preventDefault();
         this.handleApiSubmit(this.state.search)
-        
+        console.log(this.state.search);
       }
      
     
@@ -98,26 +100,20 @@ class MoviesTv extends Component {
               <Col size="md-6 sm-12">
                
                 {this.state.movies.length ? (
-                  <List>
-                    {this.state.movies.map(food => {
-                      console.log(food)
-                      
-                      return (
-                        <ListItem key={food.title}  >
+                    <List>
+                    {this.state.movies.map(movie => (
+                        <ListItem key={movie.title}  >
                            
-                           <strong>{food.title}</strong> 
+                          <strong>{movie.title}</strong> 
                            
                            <br></br>
-                           <img src={food.image_url} alt={food.title}></img>
+                           <img src={movie.image_url} alt={movie.title}></img>
                            <br></br>
                            <br></br>
-                         <a href={food.publisher_url} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>
-                          {/* <SaveBtn   
-                            onClick={() => API.getRecipe({title: book.volumeInfo.title, authors: book.volumeInfo.authors, synopsis: book.volumeInfo.description, link: book.volumeInfo.previewLink,image: book.volumeInfo.imageLinks.smallThumbnail})}                                     
-                          >Save</SaveBtn> */}
+                         <a href={movie.publisher_url} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>
+                          
                         </ListItem>
-                      );
-                    })}
+                    ))}
                   </List>
                 ) : (
                   <h3>No Results to Display</h3>
