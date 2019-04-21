@@ -9,12 +9,14 @@ import SaveBtn from "../../components/SaveBtn";
 
 class MoviesTv extends Component {
     state = {
-        movies: [],
+        movies: {},
         search: "",
         
       };
 
-     
+     componentDidMount(){
+       this.handleApiSubmit("elf")
+     }
 
       handleInputChange = event => {
         const { name, value } = event.target;
@@ -99,25 +101,28 @@ class MoviesTv extends Component {
               </Col>
               <Col size="md-6 sm-12">
                
-                {this.state.movies.length ? (
+                 
                     <List>
-                    {this.state.movies.map(movie => (
-                        <ListItem key={movie.title}  >
+                    
+                     
+
+                     
+                        <ListItem key={this.state.movies.Title}  >
                            
-                          <strong>{movie.title}</strong> 
-                           
+                          <strong>Name: {this.state.movies.Title}</strong> 
+                          <p>Plot: {this.state.movies.Plot}</p>
+                           <p>Release Date: {this.state.movies.Released}</p>
                            <br></br>
-                           <img src={movie.image_url} alt={movie.title}></img>
+
+                           <img src={this.state.movies.Poster} alt={this.state.movies.Title}></img>
                            <br></br>
                            <br></br>
-                         <a href={movie.publisher_url} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>
+                         <a href={this.state.movies.Website} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>
                           
                         </ListItem>
-                    ))}
+                      
                   </List>
-                ) : (
-                  <h3>No Results to Display</h3>
-                )}
+              
               </Col>
             </Row>
           </Container>
