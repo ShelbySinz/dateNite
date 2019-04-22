@@ -62,13 +62,10 @@ class MoviesTv extends Component {
                            <strong><h1>{dates.title}</h1></strong> 
                            <p>{dates.description}</p>
 
-                           <br></br>
+                           
                            <br></br>
                             <p>What you Need: {dates.whatYouNeed}</p>
-                           
-                           <br></br>
-                           
-                           <br></br>
+          
                            <br></br>
                         
                           <SaveBtn   

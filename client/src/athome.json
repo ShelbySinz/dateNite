@@ -15,5 +15,32 @@
     "whatYouNeed": "dinner, fun outfits",
     "SuggestedRecipe": "Chicken"
     
+  },
+  {
+    "title": "Twister",
+    "type": "At-home",
+    "description":
+      "Get down and twisted!",
+    "whatYouNeed": "Twister",
+    "SuggestedRecipe": "Burgers"
+    
+  },
+  {
+    "title": "Bubble Bath",
+    "type": "At-home",
+    "description":
+      "Draw a bubble bath for two!",
+    "whatYouNeed": "bubbles, bath",
+    "SuggestedRecipe": "Chocolate covered strawberries"
+    
+  },
+  {
+    "title": "Karaoke Night",
+    "type": "At-home",
+    "description":
+      "Get a speaker and some music and take turns singing!",
+    "whatYouNeed": "speaker, Pandora",
+    "SuggestedRecipe": "Nachos"
+    
   }
 ]
