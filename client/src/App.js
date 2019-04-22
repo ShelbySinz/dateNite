@@ -7,6 +7,7 @@ import "./App.css";
 import Home from "./pages/Home/home";
 import HomeDates from "./pages/atHome/homeDate";
 import MovieDates from "./pages/Movies/movieDate";
+import RestaurantDates from "./pages/Restaurant/restaurantDate";
 // import Saved from "./pages/Saved";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/NavBar/Nav";
@@ -31,6 +32,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
            <Route exact path="/dates/atHome" component={HomeDates} /> 
            <Route exact path="/dates/movies" component={MovieDates}/>
+           <Route exact path="/dates/restaurants" component={RestaurantDates}/>
           {/* <Route exact path="/dates/saved" component={Saved} /> */} 
           <Route component={NoMatch} />
         </Switch>

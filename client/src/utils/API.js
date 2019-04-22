@@ -29,5 +29,17 @@ export default {
   getMovie : function(query){
     const MOVIE_API = "&apikey=trilogy";
      return axios.get("http://www.omdbapi.com/?t="+query+MOVIE_API)
+  },
+
+  getRestaurant : function(location) {
+    return axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=${location}`, {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
+    },
+      params: {
+        categories: 'dinner',
+    }
+    });
   }
+
 };

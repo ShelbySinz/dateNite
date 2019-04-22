@@ -1,10 +1,10 @@
 .card {
     background: #fff;
     border-radius: 2px;
-    height: 250px;
+    height: 275px;
     margin: 1rem;
     position: relative;
-    width: 250px;
+    width: 275px;
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
     text-align: left;
   }
@@ -20,22 +20,12 @@
     height: 100%;
   }
   
-  .card > .content {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-size: 15px;
-  }
-  
-  .card > .content > ul {
-    list-style-type: none;
-  }
-  
-  .card > .content > ul > li {
-    margin-top: 18px;
-  }
   
   
 .jumbotron{
   background: #9B8375;
+  border-style: ridge;
+  border-color: #8B4513;
+  border-width: 7px;
 }
 
