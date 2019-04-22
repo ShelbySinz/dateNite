@@ -10,7 +10,11 @@ import SaveBtn from "../../components/SaveBtn";
 class Restaurant extends Component {
     state = {
         restaurant: [],
-        search: "",      
+        search: "", 
+        title:"",
+        type:"",
+        description: "",
+        whatYouNeed: ""    
       };
 
     //  componentDidMount(){
@@ -34,7 +38,11 @@ class Restaurant extends Component {
         this.handleApiSubmit(this.state.search)
         console.log(this.state.search);
       }
-     
+      SaveDates = () => {
+        const dateData={title: this.state.title, type: this.state.type, description: this.state.description, whatYouNeed: this.state.whatYouNeed }
+       API.saveDates(dateData) 
+       console.log(this.state.title)
+     }
     
       render() {
         return (
@@ -63,7 +71,7 @@ class Restaurant extends Component {
                            <p>What you Need: {dates.whatYouNeed}</p>
                         
                           <SaveBtn   
-                            onClick={() => API.saveDates({title: dates.title, type: dates.type, description: dates.description, whatYouNeed: dates.whatYouNeed})}                                     
+                            onClick={() => this.setState({title:dates.title, type:dates.type, description:dates.description, whatYouNeed:dates.whatYouNeed},this.SaveDates)}                                     
                           >Save</SaveBtn>
                         </ListItem>
                       );
@@ -91,8 +99,11 @@ class Restaurant extends Component {
                 </form>
               </Col>
               <Col size="md-6 sm-12">
+              {this.state.restaurant.length ? (
                     <List>
-                    {/* {this.state.restaurant.map(result => (
+
+                    {this.state.restaurant.map(result => (
+                      
                       <ListItem key={result.id}  >                         
                             <strong>Name: {result.name}</strong> 
                             <p>Location: {result.location}</p>
@@ -103,15 +114,18 @@ class Restaurant extends Component {
                             <br></br>
                           <a href={result.url} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>                          
                       </ListItem>
-                      ))} */}
-                      <ListItem key={this.state.restaurant.id}  >                         
+                      ))}
+                      {/* <ListItem key={this.state.restaurant.id}  >                         
                             <strong>Name: {this.state.restaurant.name}</strong> 
                             <p>Location: {this.state.restaurant.location}</p>
                             <p>Price: {this.state.restaurant.price}</p>
                             <img src={this.state.restaurant.image_url} alt={this.state.restaurant.name}></img>
                           <a href={this.state.restaurant.url} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>                          
-                      </ListItem>
-                    </List>              
+                      </ListItem> */}
+                    </List>   
+                     ) : (
+                      <h3>No Results to Display</h3>
+                     )}          
               </Col>
             </Row>
           </Container>

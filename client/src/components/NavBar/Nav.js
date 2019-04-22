@@ -21,6 +21,7 @@ function Nav() {
         <a className="navbar-brand" href="/dates/movies">
           Movies and TV
         </a>
+        <a className= "navbar-brand" href="/dates/saved">Saved</a>
     </nav>
     
   );

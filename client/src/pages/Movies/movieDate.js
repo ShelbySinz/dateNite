@@ -11,6 +11,10 @@ class MoviesTv extends Component {
     state = {
         movies: {},
         search: "",
+        title:"",
+        type:"",
+        description: "",
+        whatYouNeed: ""
         
       };
 
@@ -37,6 +41,11 @@ class MoviesTv extends Component {
         console.log(this.state.search);
       }
      
+      SaveDates = () => {
+        const dateData={title: this.state.title, type: this.state.type, description: this.state.description, whatYouNeed: this.state.whatYouNeed }
+       API.saveDates(dateData) 
+       console.log(this.state.title)
+     }
     
       render() {
         return (
@@ -69,7 +78,7 @@ class MoviesTv extends Component {
                            <br></br>
                         
                           <SaveBtn   
-                            onClick={() => API.saveDates({title: dates.title, type: dates.type, description: dates.description, whatYouNeed: dates.whatYouNeed})}                                     
+                            onClick={() => this.setState({title:dates.title, type:dates.type, description:dates.description, whatYouNeed:dates.whatYouNeed},this.SaveDates)}                                     
                           >Save</SaveBtn>
                         </ListItem>
                       );
