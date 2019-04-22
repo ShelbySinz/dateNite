@@ -11,19 +11,18 @@ class AtHome extends Component {
     state = {
         recipes: [],
         search: "",
-        
+        title:"",
+        type:"",
+        description: "",
+        whatYouNeed: ""
       };
     
-      // When the component mounts, load all books and save them to this.state.books
-    //   componentDidMount() {
-    //    this.handleApiSubmit("harry-potter");
-    //   }
-    
-      // Loads all books  and sets them to this.state.books
-      
-    
-      // Deletes a book from the database with a given id, then reloads books from the db
-      
+      SaveDates = () => {
+       const dateData={title: this.state.title, type: this.state.type, description: this.state.description, whatYouNeed: this.state.whatYouNeed }
+      API.saveDates(dateData) 
+      console.log(this.state.title)
+    }
+
     
       // Handles updating component state when the user types into the input field
       handleInputChange = event => {
@@ -70,18 +69,18 @@ class AtHome extends Component {
                            <strong><h1>{dates.title}</h1></strong> 
                            <p>{dates.description}</p>
 
-                           <br></br>
+                           
                            <br></br>
                             <p>What you Need: {dates.whatYouNeed}</p>
                            
                            <br></br>
                            <p>Suggested Recipe: {dates.SuggestedRecipe}</p>
                            
-                           <br></br>
+                          
                            <br></br>
                         
                           <SaveBtn   
-                            onClick={() => API.saveDates({title: dates.title, type: dates.type, description: dates.description, whatYouNeed: dates.whatYouNeed})}                                     
+                            onClick={() => this.setState({title:dates.title, type:dates.type, description:dates.description, whatYouNeed:dates.whatYouNeed},this.SaveDates)}                                    
                           >Save</SaveBtn>
                         </ListItem>
                       );
@@ -116,7 +115,7 @@ class AtHome extends Component {
                       console.log(food)
                       
                       return (
-                        <ListItem key={food.title}  >
+                        <ListItem key={food.recipe_id}  >
                            
                            <strong>{food.title}</strong> 
                            
@@ -124,7 +123,7 @@ class AtHome extends Component {
                            <img className={"img-fluid"} src={food.image_url} alt={food.title}></img>
                            <br></br>
                            <br></br>
-                         <a href={food.publisher_url} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>
+                         <a href={food.source_url} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>
                           {/* <SaveBtn   
                             onClick={() => API.getRecipe({title: book.volumeInfo.title, authors: book.volumeInfo.authors, synopsis: book.volumeInfo.description, link: book.volumeInfo.previewLink,image: book.volumeInfo.imageLinks.smallThumbnail})}                                     
                           >Save</SaveBtn> */}

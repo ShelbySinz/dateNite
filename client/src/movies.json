@@ -7,11 +7,35 @@
     "whatYouNeed": "Redbox or Movie app"
   },
   {
-    "title": "Theme night",
-    "type": "At-home",
+    "title": "RedBox",
+    "type": "Movies&Tv",
     "description":
-      "Dress up like your favorite decade and have a themed dinner!",
-    "whatYouNeed": "dinner, fun outfits"
+      "Pick a movie you think your partner would like to watch and your partner picks one they think you would like!",
+    "whatYouNeed": "RedBox"
+    
+  },
+  {
+    "title": "Harry Potter",
+    "type": "Movies&Tv",
+    "description":
+      "Dress up like your favorite character from HP and binge watch all movies !",
+    "whatYouNeed": "HP movies and costumes"
+    
+  },
+  {
+    "title": "YouTube",
+    "type": "Movies&Tv",
+    "description":
+      "Watch funny videos together!",
+    "whatYouNeed": "Internet"
+    
+  },
+  {
+    "title": "IDK?...",
+    "type": "Movies&Tv",
+    "description":
+      "If you aren't sure what you want to watch search our site for movies and read the plot",
+    "whatYouNeed": "DateNite, RedBox"
     
   }
 ]
