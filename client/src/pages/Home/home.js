@@ -14,6 +14,7 @@ function Home() {
             
             <Jumbotron>
                 <h1>Welcome to DateNite!</h1>
+                <p>Your one-stop shop for all of your date planning needs. Reminder: this is a "what to do" for a date site, not "how to find" a date.</p>
             </Jumbotron>
                 <Row>
                     <Col size = "md-2"></Col>
@@ -21,6 +22,7 @@ function Home() {
                             <Card
                                 name={homePage[0].name}
                                 image={homePage[0].image}>
+                                <br></br>
                             <Link to="/dates/atHome">← At Home!</Link>                            
                             </Card>
                         </Col>
@@ -29,6 +31,7 @@ function Home() {
                                 name={homePage[1].name}
                                 image={homePage[1].image}
                             >
+                                <br></br>
                             <Link to="/dates/lowBudget">← Low-Budget!</Link>
                             </Card>            
                         </Col>
@@ -37,6 +40,7 @@ function Home() {
                                 name={homePage[2].name}
                                 image={homePage[2].image}
                             >
+                                <br></br>
                             <Link to="/dates/outdoors">← Outdoors!</Link>
                             </Card>
                         </Col>
@@ -48,20 +52,22 @@ function Home() {
                             <Card
                                 name={homePage[3].name}
                                 image={homePage[3].image}
-                                >
-                                <Link to="/dates/restaurants">← Restaurants and Bars!</Link>
-                                </Card>
+                            >
+                                 <br></br>   
+                            <Link to="/dates/restaurants">← Restaurants and Bars!</Link>
+                            </Card>
                         </Col>
                     <Col size="md-3">
                         <Card
                             name={homePage[4].name}
                             image={homePage[4].image}
                             >
-                            <Link to="/dates/movies">← Movies and TV!</Link>
+                            <br></br>
+                        <Link to="/dates/movies">← Movies and TV!</Link>
                         </Card>
-                </Col>
-            </Row>
-                </Container>
+                    </Col>
+                </Row>
+            </Container>
 
             );
 
