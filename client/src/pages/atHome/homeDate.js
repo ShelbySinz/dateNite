@@ -57,7 +57,8 @@ class AtHome extends Component {
                   </Col>
                   </Row>
                   <Row>
-                   <Col size= "md-12">
+                    <Col size= "md-2"></Col>
+                   <Col size= "md-8">
                   <List>
                       
                     {HomeJson.map( dates => {
@@ -118,12 +119,14 @@ class AtHome extends Component {
                         <ListItem key={food.recipe_id}  >
                            
                            <strong>{food.title}</strong> 
-                           
+                           <a href={food.source_url} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>
+                          <br></br>
                            <br></br>
                            <img className={"img-fluid"} src={food.image_url} alt={food.title}></img>
                            <br></br>
                            <br></br>
-                         <a href={food.source_url} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>
+                         
+                          <a href={"mailto:?body= link to recipe:" + food.source_url} target="_top"><i className="far fa-envelope"></i></a>
                           {/* <SaveBtn   
                             onClick={() => API.getRecipe({title: book.volumeInfo.title, authors: book.volumeInfo.authors, synopsis: book.volumeInfo.description, link: book.volumeInfo.previewLink,image: book.volumeInfo.imageLinks.smallThumbnail})}                                     
                           >Save</SaveBtn> */}
