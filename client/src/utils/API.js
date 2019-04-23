@@ -32,18 +32,9 @@ export default {
      return axios.get("http://www.omdbapi.com/?t="+query+MOVIE_API)
   },
 
-  getRestaurant : function(location) {
-    const REACT_APP_API_KEY = `${process.env.REACT_APP_API_KEY}`
-    return axios.get(`${`https://cors-anywhere.herokuapp.com/`}https://api.yelp.com/v3/businesses/search?location=${location}`, {
-      headers: {
-        Authorization: `Bearer ${REACT_APP_API_KEY}`
-    },
-      params: {
-        categories: 'dinner',
-    }
-    });
+  getRestaurant : function(type) {
+    const YOUR_API_KEY = "AIzaSyDFpd-2EoMstvbarr8ywlER8dEv2nzfQhY"
+    return axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://maps.googleapis.com/maps/api/place/textsearch/json?query=${type}`+"+restaurants+in+Denver&key="+YOUR_API_KEY)
   }
-
-  // ${'https://cors-anywhere.herokuapp.com/'}
 
 };
