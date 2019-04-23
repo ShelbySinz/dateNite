@@ -8,18 +8,19 @@ import restaurantJson from "../../restaurants.json";
 import SaveBtn from "../../components/SaveBtn";
 
 class Restaurant extends Component {
+
     state = {
-        restaurant: [],
-        search: "", 
-        title:"",
-        type:"",
-        description: "",
-        whatYouNeed: ""    
-      };
+          restaurant: [],
+          search: "", 
+          title:"",
+          type:"",
+          description: "",
+          whatYouNeed: ""    
+        };
 
     //  componentDidMount(){
     //    this.handleApiSubmit()
-    //  }
+    //  };
 
       handleInputChange = event => {
         const { name, value } = event.target;
@@ -29,7 +30,7 @@ class Restaurant extends Component {
       };
     
       handleApiSubmit = query => {        
-        API.getRestaurant(query).then( res => this.setState({restaurant: res.data.businesses}))
+        API.getRestaurant(query).then( res => this.setState({restaurant: res.data.results}))
         console.log(this.state.restaurant)
       }
     
@@ -88,7 +89,7 @@ class Restaurant extends Component {
                     value={this.state.search}
                     onChange={this.handleInputChange}
                     name="search"
-                    placeholder="Denver, CO"
+                    placeholder="Mexican"
                   />
               
                   <FormBtn
@@ -99,33 +100,23 @@ class Restaurant extends Component {
                 </form>
               </Col>
               <Col size="md-6 sm-12">
-              {this.state.restaurant.length ? (
+                {this.state.restaurant.length ? (
                     <List>
 
                     {this.state.restaurant.map(result => (
                       
                       <ListItem key={result.id}  >                         
                             <strong>Name: {result.name}</strong> 
-                            <p>Location: {result.location}</p>
-                            <p>Price: {result.price}</p>
-                            <br></br>
-                            <img src={result.image_url} alt={result.name}></img>
-                            <br></br>
-                            <br></br>
-                          <a href={result.url} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>                          
+                            <p>Location: {result.formatted_address}</p>
+                            <p>Price (4 is very expensive!): {result.price_level}</p>
+                            <p>Rating (out of 5 stars!): {result.rating}</p>                           
+                            <a href={"https://www.google.com/maps/place/" + result.formatted_address} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>
                       </ListItem>
                       ))}
-                      {/* <ListItem key={this.state.restaurant.id}  >                         
-                            <strong>Name: {this.state.restaurant.name}</strong> 
-                            <p>Location: {this.state.restaurant.location}</p>
-                            <p>Price: {this.state.restaurant.price}</p>
-                            <img src={this.state.restaurant.image_url} alt={this.state.restaurant.name}></img>
-                          <a href={this.state.restaurant.url} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>                          
-                      </ListItem> */}
                     </List>   
                      ) : (
                       <h3>No Results to Display</h3>
-                     )}          
+                     )}              
               </Col>
             </Row>
           </Container>
