@@ -7,6 +7,7 @@ export default {
   // Gets all books
   saveDates: function(dateData) {
     return axios.post("/api/dates", dateData);
+     
   },
   // Gets the book with the given id
   getSavedDates: function() {
@@ -32,14 +33,17 @@ export default {
   },
 
   getRestaurant : function(location) {
-    return axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=${location}`, {
+    const REACT_APP_API_KEY = `${process.env.REACT_APP_API_KEY}`
+    return axios.get(`${`https://cors-anywhere.herokuapp.com/`}https://api.yelp.com/v3/businesses/search?location=${location}`, {
       headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
+        Authorization: `Bearer ${REACT_APP_API_KEY}`
     },
       params: {
         categories: 'dinner',
     }
     });
   }
+
+  // ${'https://cors-anywhere.herokuapp.com/'}
 
 };

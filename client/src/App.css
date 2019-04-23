@@ -1,6 +1,10 @@
 html, body{
-  background-image: url("./components/denverskyline.jpg")
+  background-image: url("./components/denverskyline.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
 
 .App {
   text-align: center;
