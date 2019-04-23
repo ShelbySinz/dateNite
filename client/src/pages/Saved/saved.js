@@ -42,7 +42,8 @@ class Saved extends Component {
                   </Col>
                   </Row>
                   <Row>
-                   <Col size= "md-12">
+                      <Col size= "md-3"></Col>
+                   <Col size= "md-6">
                    {this.state.saved.length ? (
                   <List>
                       {this.state.saved.map(saved => {
@@ -50,12 +51,15 @@ class Saved extends Component {
                    <ListItem key={saved._id}>
                     <strong>{saved.title}</strong>
                     <br></br>
-
+                    <p>Type of date: {saved.type}</p>
+                    <br></br>
                     <p>{saved.description}</p>       
                    <br></br>
                    <p>What you Need: {saved.whatYouNeed}</p>
                         
                    <DeleteBtn onClick={() => this.deleteDate(saved._id)} />
+                   
+                   <a href={`mailto:?body= Your Saved Date: ` + saved.title + " description: "+ saved.description + "What you need: " + saved.whatYouNeed} target="_top"><i className="far fa-envelope"></i></a>
                    </ListItem>
                           )  
                     })}

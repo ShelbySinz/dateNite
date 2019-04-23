@@ -59,7 +59,8 @@ class MoviesTv extends Component {
                   </Col>
                   </Row>
                   <Row>
-                   <Col size= "md-12">
+                    <Col size= "md-2"></Col>
+                   <Col size= "md-8">
                   <List>
                       
                     {movieJson.map( dates => {

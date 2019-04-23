@@ -7,6 +7,7 @@ export default {
   // Gets all books
   saveDates: function(dateData) {
     return axios.post("/api/dates", dateData);
+     
   },
   // Gets the book with the given id
   getSavedDates: function() {
