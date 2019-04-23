@@ -1,19 +1,17 @@
 const router = require("express").Router();
 const datesController = require("../../controllers/datesController");
 
-// Matches with "/api/books"
+// Matches with "/api/dates"
 router.route("/")
   .get(datesController.findAll)
   .post(datesController.create);
 
-// Matches with "/api/books/:id"
+// Matches with "/api/dates/:id"
 router
   .route("/:id")
   .get(datesController.findById)
   .put(datesController.update)
   .delete(datesController.remove);
   
-router
-    .route("/")
-    .post(datesController.create)
+
 module.exports = router;

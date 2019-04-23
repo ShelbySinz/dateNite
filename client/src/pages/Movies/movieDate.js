@@ -4,27 +4,24 @@ import {List, ListItem} from "../../components/List";
 import {Container,Row, Col} from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import API from "../../utils/API";
-import HomeJson from "../../athome.json";
+import movieJson from "../../movies.json";
 import SaveBtn from "../../components/SaveBtn";
 
-class AtHome extends Component {
+class MoviesTv extends Component {
     state = {
-        recipes: [],
+        movies: {},
         search: "",
         title:"",
         type:"",
         description: "",
         whatYouNeed: ""
+        
       };
-    
-      SaveDates = () => {
-       const dateData={title: this.state.title, type: this.state.type, description: this.state.description, whatYouNeed: this.state.whatYouNeed }
-      API.saveDates(dateData) 
-      console.log(this.state.title)
-    }
 
-    
-      // Handles updating component state when the user types into the input field
+     componentDidMount(){
+       this.handleApiSubmit("elf")
+     }
+
       handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
@@ -34,16 +31,21 @@ class AtHome extends Component {
     
       handleApiSubmit = query => {
         
-        API.getRecipe(query).then( res => this.setState({recipes: res.data.recipes}))
-        console.log(this.state.recipes)
+        API.getMovie(query).then( res => this.setState({movies: res.data}))
+        console.log(this.state.movies)
       }
     
       handleFormSubmit = event => {
         event.preventDefault();
         this.handleApiSubmit(this.state.search)
-        
+        console.log(this.state.search);
       }
      
+      SaveDates = () => {
+        const dateData={title: this.state.title, type: this.state.type, description: this.state.description, whatYouNeed: this.state.whatYouNeed }
+       API.saveDates(dateData) 
+       console.log(this.state.title)
+     }
     
       render() {
         return (
@@ -51,7 +53,7 @@ class AtHome extends Component {
             <Row>
               <Col size="md-12">
                 <Jumbotron>
-                  <h1>At Home Date Ideas!</h1>
+                  <h1>Movies and Tv Date Ideas!</h1>
                   </Jumbotron>
 
                   </Col>
@@ -61,7 +63,7 @@ class AtHome extends Component {
                    <Col size= "md-8">
                   <List>
                       
-                    {HomeJson.map( dates => {
+                    {movieJson.map( dates => {
                       console.log(dates)
                       
                       return (
@@ -73,15 +75,11 @@ class AtHome extends Component {
                            
                            <br></br>
                             <p>What you Need: {dates.whatYouNeed}</p>
-                           
-                           <br></br>
-                           <p>Suggested Recipe: {dates.SuggestedRecipe}</p>
-                           
-                          
+          
                            <br></br>
                         
                           <SaveBtn   
-                            onClick={() => this.setState({title:dates.title, type:dates.type, description:dates.description, whatYouNeed:dates.whatYouNeed},this.SaveDates)}                                    
+                            onClick={() => this.setState({title:dates.title, type:dates.type, description:dates.description, whatYouNeed:dates.whatYouNeed},this.SaveDates)}                                     
                           >Save</SaveBtn>
                         </ListItem>
                       );
@@ -98,45 +96,40 @@ class AtHome extends Component {
                     value={this.state.search}
                     onChange={this.handleInputChange}
                     name="search"
-                    placeholder="(chicken)"
+                    placeholder="The-Matrix"
                   />
               
                   <FormBtn
                     onClick={this.handleFormSubmit}
                   >
-                    Find recipes
+                    Find Movies
                   </FormBtn>
                 </form>
               </Col>
               <Col size="md-6 sm-12">
                
-                {this.state.recipes.length ? (
-                  <List>
-                    {this.state.recipes.map(food => {
-                      console.log(food)
-                      
-                      return (
-                        <ListItem key={food.recipe_id}  >
+                 
+                    <List>
+                    
+                     
+
+                     
+                        <ListItem key={this.state.movies.Title}  >
                            
-                           <strong>{food.title}</strong> 
-                           <a href={food.source_url} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>
-                          <br></br>
+                          <strong>Name: {this.state.movies.Title}</strong> 
+                          <p>Plot: {this.state.movies.Plot}</p>
+                           <p>Release Date: {this.state.movies.Released}</p>
                            <br></br>
-                           <img className={"img-fluid"} src={food.image_url} alt={food.title}></img>
+
+                           <img src={this.state.movies.Poster} alt={this.state.movies.Title}></img>
                            <br></br>
                            <br></br>
-                         
-                          <a href={"mailto:?body= link to recipe:" + food.source_url} target="_top"><i className="far fa-envelope"></i></a>
-                          {/* <SaveBtn   
-                            onClick={() => API.getRecipe({title: book.volumeInfo.title, authors: book.volumeInfo.authors, synopsis: book.volumeInfo.description, link: book.volumeInfo.previewLink,image: book.volumeInfo.imageLinks.smallThumbnail})}                                     
-                          >Save</SaveBtn> */}
+                         <a href={this.state.movies.Website} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>
+                          
                         </ListItem>
-                      );
-                    })}
+                      
                   </List>
-                ) : (
-                  <h3>No Results to Display</h3>
-                )}
+              
               </Col>
             </Row>
           </Container>
@@ -144,6 +137,4 @@ class AtHome extends Component {
       }
     }
     
-    export default AtHome;
-    
-
+    export default MoviesTv;
