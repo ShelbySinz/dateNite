@@ -14,7 +14,7 @@ function Nav() {
   <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
     <a className="dropdown-item" href="/">Home</a>
     <a className="dropdown-item" href="/dates/atHome">At Home</a>
-    <a className="dropdown-item" href="/dates/lowBudget">Low Budget</a>
+   
     <a className="dropdown-item" href="/dates/outdoors">Outdoors</a>
     <a className="dropdown-item" href="/dates/restaurants">Resaurants and Bars</a>
     <a className="dropdown-item" href="/dates/movies">Movies and TV</a>

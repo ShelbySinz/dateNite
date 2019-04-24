@@ -14,7 +14,8 @@ class MoviesTv extends Component {
         title:"",
         type:"",
         description: "",
-        whatYouNeed: ""
+        whatYouNeed: "",
+        active: "far fa-heart"
         
       };
 
@@ -68,19 +69,20 @@ class MoviesTv extends Component {
                       
                       return (
                         <ListItem key={dates.title}  >
-                           
+                            
+                           <small className= "float-right">{dates.type}</small>
+                           <br></br>
                            <strong><h1>{dates.title}</h1></strong> 
                            <p>{dates.description}</p>
 
-                           
                            <br></br>
-                            <p>What you Need: {dates.whatYouNeed}</p>
+                            <p className="text-muted">What you Need: {dates.whatYouNeed}</p>
           
                            <br></br>
                         
-                          <SaveBtn   
-                            onClick={() => this.setState({title:dates.title, type:dates.type, description:dates.description, whatYouNeed:dates.whatYouNeed},this.SaveDates)}                                     
-                          >Save</SaveBtn>
+                          <SaveBtn  
+                            onClick={ () => this.setState({title:dates.title, type:dates.type, description:dates.description, whatYouNeed:dates.whatYouNeed},this.SaveDates)}                                    
+                          ></SaveBtn>
                         </ListItem>
                       );
                     })}
@@ -124,8 +126,8 @@ class MoviesTv extends Component {
                            <img src={this.state.movies.Poster} alt={this.state.movies.Title}></img>
                            <br></br>
                            <br></br>
-                         <a href={this.state.movies.Website} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>
-                          
+                         <a className="float-right"href={this.state.movies.Website} target="_blank"><i className="fas fa-eye"></i></a>
+                         <a className="float-left" href={"mailto:?body= Name of Movie:" + this.state.movies.Title + " Plot: "+ this.state.movies.Plot} target="_top"><i className="far fa-envelope"></i></a> 
                         </ListItem>
                       
                   </List>

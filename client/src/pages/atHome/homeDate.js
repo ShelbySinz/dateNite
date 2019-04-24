@@ -7,6 +7,7 @@ import API from "../../utils/API";
 import HomeJson from "../../athome.json";
 import SaveBtn from "../../components/SaveBtn";
 
+
 class AtHome extends Component {
     state = {
         recipes: [],
@@ -23,6 +24,7 @@ class AtHome extends Component {
       console.log(this.state.title)
     }
 
+    
     
       // Handles updating component state when the user types into the input field
       handleInputChange = event => {
@@ -66,8 +68,11 @@ class AtHome extends Component {
                       
                       return (
                         <ListItem key={dates.title}  >
+
+                          <small className="float-right">{dates.type}</small>
+                          <br></br>
                            
-                           <strong><h1>{dates.title}</h1></strong> 
+                           <strong><h2>{dates.title}</h2></strong> 
                            <p>{dates.description}</p>
 
                            
@@ -75,14 +80,14 @@ class AtHome extends Component {
                             <p>What you Need: {dates.whatYouNeed}</p>
                            
                            <br></br>
-                           <p>Suggested Recipe: {dates.SuggestedRecipe}</p>
+                           <p className="text-muted">Suggested Recipe: {dates.SuggestedRecipe}</p>
                            
                           
                            <br></br>
                         
-                          <SaveBtn   
+                         <SaveBtn   
                             onClick={() => this.setState({title:dates.title, type:dates.type, description:dates.description, whatYouNeed:dates.whatYouNeed},this.SaveDates)}                                    
-                          >Save</SaveBtn>
+                          ></SaveBtn> 
                         </ListItem>
                       );
                     })}
@@ -118,18 +123,16 @@ class AtHome extends Component {
                       return (
                         <ListItem key={food.recipe_id}  >
                            
-                           <strong>{food.title}</strong> 
-                           <a href={food.source_url} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>
+                           <h5 className="mb-1">{food.title}</h5> 
+                           
                           <br></br>
                            <br></br>
                            <img className={"img-fluid"} src={food.image_url} alt={food.title}></img>
                            <br></br>
                            <br></br>
-                         
-                          <a href={"mailto:?body= link to recipe:" + food.source_url} target="_top"><i className="far fa-envelope"></i></a>
-                          {/* <SaveBtn   
-                            onClick={() => API.getRecipe({title: book.volumeInfo.title, authors: book.volumeInfo.authors, synopsis: book.volumeInfo.description, link: book.volumeInfo.previewLink,image: book.volumeInfo.imageLinks.smallThumbnail})}                                     
-                          >Save</SaveBtn> */}
+                           <a  className="float-right"  href={food.source_url} target="_blank"><i className="fas fa-eye"></i></a>
+                          <a className= "float-left"href={"mailto:?body= link to recipe:" + food.source_url} target="_top"><i className="far fa-envelope"></i></a>
+                          
                         </ListItem>
                       );
                     })}

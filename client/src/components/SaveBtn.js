@@ -1,4 +1,8 @@
 import React from "react";
+const style = {
+  color: "red",
+  float: "right"
+  }
 
 
 // The ...props means, spread all of the passed props onto this element
@@ -6,7 +10,7 @@ import React from "react";
 function SaveBtn(props) {
   return (
     <span className="delete-btn" {...props} role="button" tabIndex="0">
-      <i className="fas fa-heart"></i>
+      <i style = {style}className="far fa-heart"></i>
     </span>
   );
 }
