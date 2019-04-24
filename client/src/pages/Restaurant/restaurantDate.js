@@ -66,6 +66,8 @@ class Restaurant extends Component {
                       
                       return (
                         <ListItem key={dates.title}  >
+                          <small className = "float-right">{dates.type}</small>
+                          <br></br>
                            
                            <strong><h2>{dates.title}</h2></strong> 
                            <p>{dates.description}</p>
@@ -110,7 +112,8 @@ class Restaurant extends Component {
                             <p>Location: {result.formatted_address}</p>
                             <p>Price (4 is very expensive!): {result.price_level}</p>
                             <p>Rating (out of 5 stars!): {result.rating}</p>                           
-                            <a href={"https://www.google.com/maps/place/" + result.formatted_address} target="_blank"><button className="btn btn-sm btn-primary" >view</button></a>
+                            <a className="float-right" href={"https://www.google.com/maps/place/" + result.formatted_address} target="_blank"><i className="fas fa-eye"></i></a>
+                            <a className="float-left" href={"mailto:?body= Address to"+ result.name + ":" + result.formatted_address} target="_top"><i className="far fa-envelope"></i></a>
                       </ListItem>
                       ))}
                     </List>   

@@ -49,17 +49,19 @@ class Saved extends Component {
                       {this.state.saved.map(saved => {
                           return (
                    <ListItem key={saved._id}>
-                    <strong>{saved.title}</strong>
-                    <br></br>
-                    <p>Type of date: {saved.type}</p>
+                   <small className="float-right">{saved.type}</small>
+                   <br></br>
+                    <strong><h3>{saved.title}</h3></strong>
+                   
+                    
                     <br></br>
                     <p>{saved.description}</p>       
                    <br></br>
-                   <p>What you Need: {saved.whatYouNeed}</p>
+                   <p className="text-muted">What you Need: {saved.whatYouNeed}</p>
                         
-                   <DeleteBtn onClick={() => this.deleteDate(saved._id)} />
+                   <DeleteBtn className="float-right" onClick={() => this.deleteDate(saved._id)} />
                    
-                   <a href={`mailto:?body= Your Saved Date: ` + saved.title + " description: "+ saved.description + "What you need: " + saved.whatYouNeed} target="_top"><i className="far fa-envelope"></i></a>
+                   <a className="float-left" href={`mailto:?body= Your Saved Date: ` + saved.title + " description: "+ saved.description + "What you need: " + saved.whatYouNeed} target="_top"><i className="far fa-envelope"></i></a>
                    </ListItem>
                           )  
                     })}

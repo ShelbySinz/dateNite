@@ -1,0 +1,39 @@
+  [
+  {
+    "title": "Picnic at the park",
+    "type": "low-budget",
+    "description":
+      "Gather your picnic basket and head to the park",
+    "whatYouNeed": "food, blanket"
+  },
+  {
+    "title": "Galaxy Watch",
+    "type": "low-budget",
+    "description":
+      "When the sun goes down get outside and view explore the galaxy ",
+    "whatYouNeed": "blanket, telescope,"
+  },
+  {
+    "title": "Bake them cookies",
+    "type": "low-budget",
+    "description":
+      "Nothing is better than a warm cookie with the one you love!",
+    "whatYouNeed": "cookie ingredients or store bought cookie dough"
+  },
+  {
+    "title": "Window Shop",
+    "type": "low-budget",
+    "description":
+      "Head to the mall and window shop",
+    "whatYouNeed": "nada"
+  },
+  {
+    "title": "Take a drive",
+    "type": "low-budget",
+    "description":
+      "A drive can clear your mind and your heart, get in the car and drive!",
+    "whatYouNeed": "Car, snacks"
+  }
+ 
+  
+]

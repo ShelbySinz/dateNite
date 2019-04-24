@@ -32,7 +32,7 @@ function Home() {
                                 image={homePage[1].image}
                             >
                                 <br></br>
-                            <Link to="/dates/lowBudget">← Low-Budget!</Link>
+                            <Link to="/dates/Notes">← Notes!</Link>
                             </Card>            
                         </Col>
                         <Col size= "md-3">
