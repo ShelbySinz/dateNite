@@ -1,8 +1,12 @@
-
 import React, { Component } from "react";
-
-
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import jwt_decode from "jwt-decode";
+import setAuthToken from "./utils/setAuthToken";
+import { setCurrentUser, logoutUser } from "./actions/authActions";
+
+import { Provider } from "react-redux";
+import store from "./store";
 
 //import views
 import Home from "./pages/Home/home";
@@ -14,8 +18,8 @@ import NoMatch from "./pages/NoMatch";
 
 //import componenets
 import Nav from "./components/NavBar/Nav";
-import Register from "./components/auth/Register";
-import Login from "./components/auth/Login";
+import Register from "./components/Auth/Register";
+import Login from "./components/Auth/Login";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Dashboard from "./components/Dashboard/Dashboard";
 
@@ -52,14 +56,14 @@ class App extends Component {
           <Nav />
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <Route exact path="/dates/atHome" component={HomeDates} /> 
             <Route exact path="/dates/movies" component={MovieDates}/>
             <Route exact path="/dates/restaurants" component={RestaurantDates}/>
             <Route exact path="/dates/saved" component={Saved} /> 
             <Route component={NoMatch} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
           </Switch>
         </div>
       </Router>
