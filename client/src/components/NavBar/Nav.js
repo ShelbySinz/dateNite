@@ -4,7 +4,14 @@ function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-info">
         <div className="dropdown">
-          <a className="btn btn-info" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+          <a className="btn btn-info" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false"
+            style={{
+            marginLeft: "1rem",
+            width: "150px",
+            borderRadius: "3px",
+            letterSpacing: "1px"
+          }}
+          >
             DateNite <i className="fas fa-angle-double-down"></i>
           </a>
 
@@ -25,7 +32,7 @@ function Nav() {
           marginLeft: "1rem",
           width: "150px",
           borderRadius: "3px",
-          letterSpacing: "1.5px"
+          letterSpacing: "1px"
         }}
         className="btn btn-info" href="#" role="button"      >
         Register
@@ -35,7 +42,7 @@ function Nav() {
           marginLeft: "1rem",
           width: "150px",
           borderRadius: "3px",
-          letterSpacing: "1.5px"
+          letterSpacing: "1px"
         }}
         className="btn btn-info" href="#" role="button" 
         >
