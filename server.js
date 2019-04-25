@@ -30,6 +30,9 @@ app.use(passport.initialize());
 //passport config
 require("./config/passport") (passport);
 
+// DB Config
+const db = require("./config/key").mongoURI;
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
