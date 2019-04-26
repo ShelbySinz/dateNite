@@ -59,8 +59,9 @@ class AtHome extends Component {
                   </Col>
                   </Row>
                   <Row>
-                    <Col size= "md-2"></Col>
-                   <Col size= "md-8">
+                  
+                   
+                   <Col size= "md-6">
                   <List>
                       
                     {HomeJson.map( dates => {
@@ -93,10 +94,10 @@ class AtHome extends Component {
                     })}
                   </List>
                 </Col>
-                  </Row>
+                  
                   <br></br>
                   <br></br>
-                  <Row>
+                  
                  <Col size="md-6">
                 <form>
                   <Input
