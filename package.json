@@ -4,7 +4,6 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "client-install": "npm install --prefix client",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
@@ -26,14 +25,6 @@
     "express": "^4.16.3",
     "if-env": "^1.0.4",
     "mongoose": "^5.3.16",
-    "yelp-fusion": "^3.0.0",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.18.3",
-    "classnames": "^2.2.6",
-    "is-empty": "^1.2.0",
-    "jsonwebtoken": "^8.5.1",
-    "jwt-decode": "^2.2.0",
-    "passport": "^0.4.0",
-    "passport-jwt": "^4.0.0"
+    "yelp-fusion": "^3.0.0"
   }
 }
