@@ -1,13 +1,37 @@
 const express = require("express");
-
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const passport = require("passport");
+
 const routes = require("./routes");
+
+//initialize express
 const app = express();
+
 const PORT = process.env.PORT || 3001;
 
+//add middleware
+
+//express
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//bodyparser
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+);
+app.use(bodyParser.json());
+
+//passport
+app.use(passport.initialize());
+
+//passport config
+require("./config/passport") (passport);
+
+// DB Config
+const db = require("./config/key").mongoURI;
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -19,8 +43,14 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dateNite");
-
+// Connect to MongoDB
+mongoose
+  .connect(
+    db,
+    { useNewUrlParser: true }
+  )
+  .then(() => console.log("MongoDB successfully connected"))
+  .catch(err => console.log(err));
 
 
 app.listen(PORT, function() {
