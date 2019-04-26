@@ -52,14 +52,15 @@ class Restaurant extends Component {
               <Col size="md-12">
                 <Jumbotron>
                   <h1>Restaurant Date Ideas!</h1>
-                  <p>Spend the night out and spend some money! Need help looking up restaurants? Use the search bar below - just enter the type of foods you'd like to eat!</p>
+                  <p>Spend the night out and spend some money!</p>
                   </Jumbotron>
 
                   </Col>
                   </Row>
                   <Row>
-                   <Col size= "md-8">
-                  <List>                
+                   <Col size= "md-12">
+                  <List>
+                      
                     {restaurantJson.map( dates => {
                       console.log(dates)
                       
@@ -80,10 +81,6 @@ class Restaurant extends Component {
                     })}
                   </List>
                 </Col>
-                  <Col size= "md-4">
-                  <img className={"img-fluid"} src="https://images-na.ssl-images-amazon.com/images/I/81UUBibOQvL._RI_.jpg" alt="Date Night"></img>
-                  
-                  </Col>
                   </Row>
                   <br></br>
                   <br></br>
