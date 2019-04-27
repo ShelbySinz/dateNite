@@ -1,0 +1,44 @@
+[
+    {
+      "title": "An Afternoon Picnic",
+      "type": "Afternoon",
+      "description":
+        "Grab some fresh air and sprawl out at your local park",
+      "whatYouNeed": "A blanket, a deck of cards, and a snack spread to boot"
+    },
+    {
+      "title": "A Day on the Water",
+      "type": "Full Day",
+      "description":
+        "Rent a paddleboard or a kayak and head to a nearby lake or reservoir and catch some vitamin D",
+      "whatYouNeed": "Water vessel rentals, sunscreen, and swim suits"
+    },
+    {
+      "title": "Watch the Sun Go Down",
+      "type": "Evening",
+      "description":
+        "Hit the road to find a good parking spot with a view and cuddle up while you watch the sunset",
+      "whatYouNeed": "A good blanket and folding chairs"
+    },
+    {
+      "title": "Outdoor Concert",
+      "type": "Evening",
+      "description":
+        "Find a summer concert series and get your groove on with your loved one",
+      "whatYouNeed": "Dancing Shoes"
+    },
+    {
+      "title": "Head Out For A Ride",
+      "type": "Afternoon or Late Evening",
+      "description":
+        "Rent a mountain bike or a cruiser bike and head out for a few hours of quality time",
+      "whatYouNeed": "A backpack packed with snacks, sunscreen, or an ice cream shop in mind to hit on the way home!"
+    },
+    {
+        "title": "Backpacking, Camping, or Glamping",
+        "type": "Overnight",
+        "description":
+          "Make it an overnight and find solitude in nature",
+        "whatYouNeed": "A tent, sleeping bag, sleeping pad, cook set, and a water filter"
+      }
+  ]
