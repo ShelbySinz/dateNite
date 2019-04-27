@@ -1,72 +1,44 @@
 [
     {
-      "title": "",
-      "type": "Restaurant and Activity",
+      "title": "An Afternoon Picnic",
+      "type": "Afternoon",
       "description":
-        "Dine out and catch a movie in the cinema",
-      "whatYouNeed": "A nice restaurant with a nearby movie theater"
+        "Grab some fresh air and sprawl out at your local park",
+      "whatYouNeed": "A blanket, a deck of cards, and a snack spread to boot"
     },
     {
-      "title": "Dinner and a Comedy Show",
-      "type": "Restaurant and Activity",
+      "title": "A Day on the Water",
+      "type": "Full Day",
       "description":
-        "Dine out and have some laughs from a live stand up comedy show",
-      "whatYouNeed": "Tickets to a comedy show - it's usually a 2 drink minimum or food"
+        "Rent a paddleboard or a kayak and head to a nearby lake or reservoir and catch some vitamin D",
+      "whatYouNeed": "Water vessel rentals, sunscreen, and swim suits"
     },
     {
-      "title": "Bowling and Dinner",
-      "type": "Activity then Dinner",
+      "title": "Watch the Sun Go Down",
+      "type": "Evening",
       "description":
-        "Knock pins and score points -- then get some food after working up a sweat",
-      "whatYouNeed": "Bowling alley -- there is usually food in the alley, but nothing wrong with heading a restaurant after!"
+        "Hit the road to find a good parking spot with a view and cuddle up while you watch the sunset",
+      "whatYouNeed": "A good blanket and folding chairs"
     },
     {
-      "title": "Dinner and a Sporting Game",
-      "type": "Dinner and Activity",
+      "title": "Outdoor Concert",
+      "type": "Evening",
       "description":
-        "Dine out and watch a live sporting event",
-      "whatYouNeed": "Catch the local sporting team beat its rival, while getting your noms on"
+        "Find a summer concert series and get your groove on with your loved one",
+      "whatYouNeed": "Dancing Shoes"
     },
     {
-      "title": "Dinner and Karaoke",
-      "type": "Dinner and Activity",
+      "title": "Head Out For A Ride",
+      "type": "Afternoon or Late Evening",
       "description":
-        "Dine and sing your heart out",
-      "whatYouNeed": "Look for your local karaoke bar, or book a booth!"
+        "Rent a mountain bike or a cruiser bike and head out for a few hours of quality time",
+      "whatYouNeed": "A backpack packed with snack, sunscreen, or an ice cream shop in mind to hit on the way home!"
     },
     {
-      "title": "Arcade Games and Dinner",
-      "type": "Activity then Dinner",
-      "description":
-        "Go to a carnival, or Dave and Buster's, then grab some noms after!",
-      "whatYouNeed": "Playful attitude, some quarters, and your appetite"
-    },
-    {
-      "title": "Nerf Wars!! and Dinner",
-      "type": "Activity then Dinner",
-      "description":
-        "Go to a Dart Mania or a Laser Tag place, then grab some noms after!",
-      "whatYouNeed": "Playful attitude, aim your safe guns and shoot!, and your appetite"
-    },
-    {
-      "title": "Dinner and a Concert",
-      "type": "Restaurant and Activity",
-      "description":
-        "Dine out and catch some live music",
-      "whatYouNeed": "Hard Rock Cafes have live music with no cover, or eat some dinner and watch a concert after!"
-    },
-    {
-      "title": "Boxing and Dinner",
-      "type": "Activity then Dinner",
-      "description":
-        "Grab some boxing gloves and take a boxing class with your significant other; after a few rounds, eat dinner",
-      "whatYouNeed": "Cardio cardio cardio!, and your appetite"
-    },
-    {
-      "title": "Just Dessert",
-      "type": "Dessert only",
-      "description":
-        "Just eat dessert -- forget a nutritious meal, who needs those anyway?",
-      "whatYouNeed": "Your sweet tooth"
-    }
+        "title": "Backpacking, Camping, or Glamping",
+        "type": "Overnight",
+        "description":
+          "Make it an overnight and find solitude in nature",
+        "whatYouNeed": "A tent, sleeping bag, sleeping pad, cook set, and a water filter"
+      }
   ]
