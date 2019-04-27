@@ -12,6 +12,7 @@ import OutdoorDates from "./pages/Outdoor/outdoorDate";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/NavBar/Nav";
 import Saved from "./pages/Saved/saved";
+import About from "./pages/About/About"
 // import Low from "./pages/low-budget/lowBudget"
 // import registerServiceWorker from "./registerServiceWorker";
 
@@ -23,12 +24,12 @@ class App extends Component {
         <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/dates/atHome" component={HomeDates} /> 
-          <Route exact path="/dates/movies" component={MovieDates}/>
-          <Route exact path="/dates/restaurants" component={RestaurantDates}/>
+          <Route exact path="/dates/about" component={About} />
+           <Route exact path="/dates/atHome" component={HomeDates} /> 
+           <Route exact path="/dates/movies" component={MovieDates}/>
+           <Route exact path="/dates/restaurants" component={RestaurantDates}/>
           <Route exact path="/dates/outdoors" component={OutdoorDates}/>
           <Route exact path="/dates/saved" component={Saved} /> 
-          {/* <Route exact path ="/dates/" component= {Low}/> */}
           <Route component={NoMatch} />
         </Switch>
       </div>
