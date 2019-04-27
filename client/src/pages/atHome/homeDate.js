@@ -61,7 +61,7 @@ class AtHome extends Component {
                   <Row>
                   
                    
-                   <Col size= "md-6">
+                   <Col size= "md-7">
                   <List>
                       
                     {HomeJson.map( dates => {
@@ -75,17 +75,10 @@ class AtHome extends Component {
                            
                            <strong><h2>{dates.title}</h2></strong> 
                            <p>{dates.description}</p>
-
-                           
-                           <br></br>
                             <p>What you Need: {dates.whatYouNeed}</p>
-                           
-                           <br></br>
-                           <p className="text-muted">Suggested Recipe: {dates.SuggestedRecipe}</p>
-                           
                           
-                           <br></br>
-                        
+                           <p className="text-muted">Suggested Recipe: {dates.SuggestedRecipe}</p>
+                          
                          <SaveBtn   
                             onClick={() => this.setState({title:dates.title, type:dates.type, description:dates.description, whatYouNeed:dates.whatYouNeed},this.SaveDates)}                                    
                           ></SaveBtn> 
@@ -95,12 +88,12 @@ class AtHome extends Component {
                   </List>
                 </Col>
                   
+                  <br>
+                  </br>
                   <br></br>
-                  <br></br>
-                  
-                 <Col size="md-6">
+                 <Col size="md-5">
                 <form>
-                  <Input
+                  <Input style={{marginTop: 30 }}
                     value={this.state.search}
                     onChange={this.handleInputChange}
                     name="search"
@@ -113,9 +106,9 @@ class AtHome extends Component {
                     Find recipes
                   </FormBtn>
                 </form>
-              </Col>
-              <Col size="md-6 sm-12">
-               
+             
+              
+               <br></br>
                 {this.state.recipes.length ? (
                   <List>
                     {this.state.recipes.map(food => {
@@ -124,11 +117,10 @@ class AtHome extends Component {
                       return (
                         <ListItem key={food.recipe_id}  >
                            
-                           <h5 className="mb-1">{food.title}</h5> 
+                          <strong> <h5 className="mb-1">{food.title}</h5> </strong>
                            
-                          <br></br>
-                           <br></br>
-                           <img className={"img-fluid"} src={food.image_url} alt={food.title}></img>
+                         
+                           <img style={{height:200, width:200}}className={"img-fluid"} src={food.image_url} alt={food.title}></img>
                            <br></br>
                            <br></br>
                            <a  className="float-right"  href={food.source_url} target="_blank"><i className="fas fa-eye"></i></a>

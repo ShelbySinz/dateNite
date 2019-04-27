@@ -60,8 +60,8 @@ class MoviesTv extends Component {
                   </Col>
                   </Row>
                   <Row>
-                    <Col size= "md-2"></Col>
-                   <Col size= "md-8">
+                    
+                   <Col size= "md-7">
                   <List>
                       
                     {movieJson.map( dates => {
@@ -71,15 +71,10 @@ class MoviesTv extends Component {
                         <ListItem key={dates.title}  >
                             
                            <small className= "float-right">{dates.type}</small>
-                           <br></br>
+                          <br></br>
                            <strong><h1>{dates.title}</h1></strong> 
                            <p>{dates.description}</p>
-
-                           <br></br>
                             <p className="text-muted">What you Need: {dates.whatYouNeed}</p>
-          
-                           <br></br>
-                        
                           <SaveBtn  
                             onClick={ () => this.setState({title:dates.title, type:dates.type, description:dates.description, whatYouNeed:dates.whatYouNeed},this.SaveDates)}                                    
                           ></SaveBtn>
@@ -87,14 +82,13 @@ class MoviesTv extends Component {
                       );
                     })}
                   </List>
-                </Col>
-                  </Row>
+                
                   <br></br>
                   <br></br>
-                  <Row>
-                 <Col size="md-6">
+                  </Col>
+                 <Col size="md-5">
                 <form>
-                  <Input
+                  <Input style={{marginTop:30}}
                     value={this.state.search}
                     onChange={this.handleInputChange}
                     name="search"
@@ -107,8 +101,7 @@ class MoviesTv extends Component {
                     Find Movies
                   </FormBtn>
                 </form>
-              </Col>
-              <Col size="md-6 sm-12">
+                      <br></br>
                
                  
                     <List>
