@@ -9,7 +9,8 @@ function Nav() {
          </a>
 
       <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a className="dropdown-item" href="/">Home</a>
+        <a className="dropdown-item" href="/">Login</a>
+        <a className="dropdown-item" href="/home">Home</a>
         <a className="dropdown-item" href="/dates/about">About</a>
         <a className="dropdown-item" href="/dates/atHome">At Home</a>
         <a className="dropdown-item" href="/dates/outdoors">Outdoors</a>
