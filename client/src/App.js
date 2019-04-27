@@ -24,8 +24,8 @@ class App extends Component {
           <Route exact path="/dates/atHome" component={HomeDates} /> 
           <Route exact path="/dates/movies" component={MovieDates}/>
           <Route exact path="/dates/restaurants" component={RestaurantDates}/>
-          <Route exact path="/dates/outdoor" component={OutdoorDates}/>
-          <Route exact path="/dates/saved" component={Saved} /> 
+          <Route exact path="/dates/outdoors" component={OutdoorDates}/>
+          {/* <Route exact path="/dates/saved" component={Saved} />  */}
           {/* <Route exact path ="/dates/" component= {Low}/> */}
           <Route component={NoMatch} />
         </Switch>
