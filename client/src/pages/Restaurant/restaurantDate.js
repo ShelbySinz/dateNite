@@ -31,19 +31,20 @@ class Restaurant extends Component {
     
       handleApiSubmit = query => {        
         API.getRestaurant(query).then( res => this.setState({restaurant: res.data.results}))
-        console.log(this.state.restaurant)
-      }
+        console.log(this.state.restaurant);
+      };
     
       handleFormSubmit = event => {
         event.preventDefault();
         this.handleApiSubmit(this.state.search)
         console.log(this.state.search);
-      }
+      };
+
       SaveDates = () => {
         const dateData={title: this.state.title, type: this.state.type, description: this.state.description, whatYouNeed: this.state.whatYouNeed }
-       API.saveDates(dateData) 
-       console.log(this.state.title)
-     }
+       API.saveDates(dateData); 
+       console.log(this.state.title);
+     };
     
       render() {
         return (
