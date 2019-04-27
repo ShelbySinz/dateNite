@@ -1,4 +1,4 @@
 module.exports = {
   Dates: require("./dates"),
-  User: require("./User")
+  User: require("./users")
 };
