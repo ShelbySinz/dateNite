@@ -13,6 +13,7 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/NavBar/Nav";
 import Saved from "./pages/Saved/saved";
 // import Low from "./pages/low-budget/lowBudget"
+// import registerServiceWorker from "./registerServiceWorker";
 
 class App extends Component {
   render() {
@@ -33,6 +34,7 @@ class App extends Component {
       </div>
     </Router>
   );
+
 
   }
 }
