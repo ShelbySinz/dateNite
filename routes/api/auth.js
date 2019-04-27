@@ -1,17 +1,18 @@
 const mongoose = require('mongoose');
 const passport = require('passport');
-const settings = require('../config/settings');
-require('../config/passport')(passport);
+const settings = require('../../config/settings');
+require('../../config/passport')(passport);
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const router = express.Router();
-const User = require("../models/users");
+const User = require("../../models/User");
 
 // router sign up or register new user
 router.post('/register', function(req, res) {
     if (!req.body.username || !req.body.password) {
       res.json({success: false, msg: 'Please pass username and password.'});
     } else {
+      console.log("THIS WORKS");
       const newUser = new User({
         username: req.body.username,
         password: req.body.password
@@ -51,4 +52,4 @@ router.post('/', function(req, res) {
     });
   });
 
-  export default router;
+ module.exports = router;
