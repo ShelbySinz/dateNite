@@ -27,7 +27,7 @@ router.post('/register', function(req, res) {
   });
 
 // create router for login or sign up
-router.post('/login', function(req, res) {
+router.post('/', function(req, res) {
     User.findOne({
       username: req.body.username
     }, function(err, user) {

@@ -12,8 +12,6 @@ router.route("/")
 router
   .route("/:id")
   .all(passport.authenticate('jwt', {session: false}))
-  .get(datesController.findById)
-  .put(datesController.update)
   .delete(datesController.remove);
   
 getToken = function (headers) {
