@@ -40,6 +40,12 @@ export default function register() {
         checkValidServiceWorker(swUrl);
       }
     });
+
+    window.addEventListener('fetch', (event) => {
+      if ( event.request.url.match( '^.*(\/api\/).*$' ) ) {
+        return false;
+      }
+    });
   }
 }
 

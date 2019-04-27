@@ -21,22 +21,6 @@ function Nav() {
     <a className="dropdown-item" href="/dates/saved">Saved</a>
   </div>
 </div>
-        <a className="navbar-brand" href="/dates/atHome">
-          At Home
-        </a>
-        <a className="navbar-brand" href="/dates/lowBudget">
-          Low Budget
-        </a>
-        <a className="navbar-brand" href="/dates/outdoors">
-          Outdoors
-        </a>
-        <a className="navbar-brand" href="/dates/restaurants">
-          Restaurants and Bars
-        </a>
-        <a className="navbar-brand" href="/dates/movies">
-          Movies and TV
-        </a>
-        <a className= "navbar-brand" href="/dates/saved">Saved</a>
     </nav>
     
   );
