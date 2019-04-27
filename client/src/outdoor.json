@@ -1,0 +1,72 @@
+[
+    {
+      "title": "",
+      "type": "Restaurant and Activity",
+      "description":
+        "Dine out and catch a movie in the cinema",
+      "whatYouNeed": "A nice restaurant with a nearby movie theater"
+    },
+    {
+      "title": "Dinner and a Comedy Show",
+      "type": "Restaurant and Activity",
+      "description":
+        "Dine out and have some laughs from a live stand up comedy show",
+      "whatYouNeed": "Tickets to a comedy show - it's usually a 2 drink minimum or food"
+    },
+    {
+      "title": "Bowling and Dinner",
+      "type": "Activity then Dinner",
+      "description":
+        "Knock pins and score points -- then get some food after working up a sweat",
+      "whatYouNeed": "Bowling alley -- there is usually food in the alley, but nothing wrong with heading a restaurant after!"
+    },
+    {
+      "title": "Dinner and a Sporting Game",
+      "type": "Dinner and Activity",
+      "description":
+        "Dine out and watch a live sporting event",
+      "whatYouNeed": "Catch the local sporting team beat its rival, while getting your noms on"
+    },
+    {
+      "title": "Dinner and Karaoke",
+      "type": "Dinner and Activity",
+      "description":
+        "Dine and sing your heart out",
+      "whatYouNeed": "Look for your local karaoke bar, or book a booth!"
+    },
+    {
+      "title": "Arcade Games and Dinner",
+      "type": "Activity then Dinner",
+      "description":
+        "Go to a carnival, or Dave and Buster's, then grab some noms after!",
+      "whatYouNeed": "Playful attitude, some quarters, and your appetite"
+    },
+    {
+      "title": "Nerf Wars!! and Dinner",
+      "type": "Activity then Dinner",
+      "description":
+        "Go to a Dart Mania or a Laser Tag place, then grab some noms after!",
+      "whatYouNeed": "Playful attitude, aim your safe guns and shoot!, and your appetite"
+    },
+    {
+      "title": "Dinner and a Concert",
+      "type": "Restaurant and Activity",
+      "description":
+        "Dine out and catch some live music",
+      "whatYouNeed": "Hard Rock Cafes have live music with no cover, or eat some dinner and watch a concert after!"
+    },
+    {
+      "title": "Boxing and Dinner",
+      "type": "Activity then Dinner",
+      "description":
+        "Grab some boxing gloves and take a boxing class with your significant other; after a few rounds, eat dinner",
+      "whatYouNeed": "Cardio cardio cardio!, and your appetite"
+    },
+    {
+      "title": "Just Dessert",
+      "type": "Dessert only",
+      "description":
+        "Just eat dessert -- forget a nutritious meal, who needs those anyway?",
+      "whatYouNeed": "Your sweet tooth"
+    }
+  ]

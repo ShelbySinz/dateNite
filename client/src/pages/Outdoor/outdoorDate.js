@@ -5,19 +5,18 @@ import {Container, Row, Col} from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import API from "../../utils/API";
 import SaveBtn from "../../components/SaveBtn";
+import outdoorJson from "../../outdoor.json";
 
 //create component 
 class Outdoor extends Component {
 		//set state
 		state = {
-			trails: [],
-			search: "",
-			name: "",
-			summary: "",
-			difficulty: "",
-			location: "",
-			imgSqSmall: "",
-			conditionDetails: ""
+			outdoor: [],
+			search: "", 
+			title:"",
+			type:"",
+			description: "",
+			whatYouNeed: ""    
 		};
     
     //handle input change, handle updating component state when the user types into input field
@@ -30,8 +29,8 @@ class Outdoor extends Component {
 
     //handle api/query params function
 		handleApiSubmit = query => {        
-      API.getRestaurant(query).then( res => this.setState({trails: res.data.results}));
-      console.log(this.state.trails);
+      API.getRestaurant(query).then( res => this.setState({outdoor: res.data.results}));
+      console.log(this.state.outdoor);
 		};
 		
 		//handle form submit function
@@ -43,11 +42,10 @@ class Outdoor extends Component {
     
     //save date function
 		SaveDates = () => {
-			const dateData={title: this.state.name, type: this.state.difficulty, 
-				summary: this.state.summary, conditionDetails: this.state.conditionDetails};
-			API.saveDates(dateData); 
-		 	console.log(this.state.name);
-	 }
+			const dateData={title: this.state.title, type: this.state.type, description: this.state.description, whatYouNeed: this.state.whatYouNeed }
+		 API.saveDates(dateData); 
+		 console.log(this.state.title);
+	 };
 		
 		//render and return container, make use of layout components
 		render() {
