@@ -28,16 +28,18 @@ router.post('/register', function(req, res) {
   });
 
 // create router for login or sign up
-router.post('/', function(req, res) {
+router.post('/login', function(req, res) {
+  
     User.findOne({
       username: req.body.username
     }, function(err, user) {
       if (err) throw err;
-  
+     console.log(user)
       if (!user) {
         res.status(401).send({success: false, msg: 'Authentication failed. User not found.'});
       } else {
         // check if password matches
+        
         user.comparePassword(req.body.password, function (err, isMatch) {
           if (isMatch && !err) {
             // if user is found and password is right create a token

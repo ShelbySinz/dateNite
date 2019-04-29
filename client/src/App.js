@@ -13,7 +13,7 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/NavBar/Nav";
 import Saved from "./pages/Saved/saved";
 import About from "./pages/About/About"
-import Login from "./pages/LoginPage/LoginPage.js";
+import Login from "./components/LoginPortal/LoginPortal";
 import Register from "./components/Register/Register";
 // import Low from "./pages/low-budget/lowBudget"
 // import registerServiceWorker from "./registerServiceWorker";
