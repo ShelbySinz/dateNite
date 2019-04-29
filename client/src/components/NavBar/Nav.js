@@ -21,7 +21,7 @@ function Nav() {
     <a className="dropdown-item" href="/dates/saved">Saved</a>
   </div>
 </div>
-        <a className="navbar-brand" href="/dates/atHome">
+        {/* <a className="navbar-brand" href="/dates/atHome">
           At Home
         </a>
         <a className="navbar-brand" href="/dates/lowBudget">
@@ -36,7 +36,7 @@ function Nav() {
         <a className="navbar-brand" href="/dates/movies">
           Movies and TV
         </a>
-        <a className= "navbar-brand" href="/dates/saved">Saved</a>
+        <a className= "navbar-brand" href="/dates/saved">Saved</a> */}
     </nav>
     
   );
