@@ -4,7 +4,7 @@ function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-info">
         <div className="dropdown">
-         <a className="btn btn-light" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+         <a className="btn btn-light"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
          DateNite <i className="fas fa-angle-double-down"></i>
          </a>
 

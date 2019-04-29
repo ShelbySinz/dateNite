@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import "./LoginPortal.css";
+import './LoginPortal.css';
 
 class LoginPortal extends Component {
 
@@ -25,11 +25,12 @@ class LoginPortal extends Component {
 
     const { username, password } = this.state;
 
-    axios.post('/api/auth/login', { username, password })
+    axios.post('/api/user/login', { username, password })
       .then((result) => {
+        console.log("on submit" , result);
         localStorage.setItem('jwtToken', result.data.token);
         this.setState({ message: '' });
-        this.props.history.push('/')
+        this.props.history.push('/home')
       })
       .catch((error) => {
         if(error.response.status === 401) {
@@ -53,7 +54,7 @@ class LoginPortal extends Component {
           <input type="email" class="form-control" placeholder="Email address" name="username" value={username} onChange={this.onChange} required/>
           <label for="inputPassword" class="sr-only">Password</label>
           <input type="password" class="form-control" placeholder="Password" name="password" value={password} onChange={this.onChange} required/>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" >Login</button>
           <p>
             Not a member? <Link to="/register"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Register here</Link>
           </p>

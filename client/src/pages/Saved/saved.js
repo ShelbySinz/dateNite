@@ -5,6 +5,9 @@ import {Container,Row, Col} from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import API from "../../utils/API";
 import DeleteBtn from "../../components/deleteDate";
+import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class Saved extends Component {
 
@@ -20,6 +23,7 @@ class Saved extends Component {
    }
 
    componentDidMount(){
+    axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
        this.getSavedDates();
    }
 
@@ -29,6 +33,10 @@ class Saved extends Component {
       .then(res => this.getSavedDates())
       .catch(err => console.log(err));
   };
+  logout = () => {
+    localStorage.removeItem('jwtToken');
+    window.location.reload();
+  }
 
     render() {
         return (
@@ -37,6 +45,9 @@ class Saved extends Component {
               <Col size="md-12">
                 <Jumbotron>
                   <h1>Your Saved Date Ideas!</h1>
+                  {localStorage.getItem('jwtToken') &&
+                <button class="btn btn-primary" onClick={this.logout}>Logout</button>
+              }
                   </Jumbotron>
 
                   </Col>

@@ -20,8 +20,8 @@ class AtHome extends Component {
     
       SaveDates = () => {
        const dateData={title: this.state.title, type: this.state.type, description: this.state.description, whatYouNeed: this.state.whatYouNeed }
-      API.saveDates(dateData) 
-      console.log(this.state.title)
+      API.saveDates(dateData).then(data => console.log(data)).catch(err => console.log(err))
+      console.log(dateData)
     }
 
     
