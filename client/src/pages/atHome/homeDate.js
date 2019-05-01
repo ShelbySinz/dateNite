@@ -6,7 +6,7 @@ import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import API from "../../utils/API";
 import HomeJson from "../../athome.json";
 import SaveBtn from "../../components/SaveBtn";
-
+import axios from "axios"
 
 class AtHome extends Component {
     state = {
@@ -17,6 +17,10 @@ class AtHome extends Component {
         description: "",
         whatYouNeed: ""
       };
+      componentDidMount() {
+        axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+       
+          }
     
       SaveDates = () => {
        const dateData={title: this.state.title, type: this.state.type, description: this.state.description, whatYouNeed: this.state.whatYouNeed }
