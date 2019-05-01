@@ -5,13 +5,14 @@ const passport = require("passport");
 // Matches with "/api/dates"
 router.route("/")
   .all(passport.authenticate('jwt', {session: false}))
-  .get(datesController.findAll)
+  .get(datesController.findByUsername)
   .post(datesController.create);
 
 // Matches with "/api/dates/:id"
 router
   .route("/:id")
   .all(passport.authenticate('jwt', {session: false}))
+  // .get(datesController.findById)
   // .post(datesController.create)
   .delete(datesController.remove);
   
