@@ -2,6 +2,8 @@
 import React, { Component } from "react";
 // import logo from "./logo.svg";
 
+import 'materialize-css/dist/css/materialize.min.css';
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home/home";
