@@ -3,13 +3,14 @@ const db = require("../models");
 // Defining methods for the booksController
 module.exports = {
   findByUsername: function(req, res) {
-    console.log("USER", req.user.username) 
     db.User
 
-    .findOne({User: req.user.username})
-    
-    .then(dbUser => {console.log(dbUser) ,res.json(dbUser)})
-    .catch(err => console.log(err))
+    .findOne({username: req.user.username}).then(dbUser => 
+      res.json(dbUser))
+    //   db.Dates
+    //   .find({user:dbUser._id})
+    //   .then(dbDates => {console.log(dbUser._id), res.json(dbDates)}))
+    // .catch(err => console.log(err))
   },
   findAll: function(req, res) {
     console.log("findAll", req.body)
@@ -28,10 +29,10 @@ module.exports = {
   },
 
   create: function(req, res){
-    console.log("inside controller create", req.body)
-    db.User.findOne({user: req.user.username}).then(dbUser => console.log(dbUser),
+    // console.log("inside controller create", req.body)
+    db.User.findOne({username: req.user.username}).then(dbUser => 
     db.Dates
-    .create(req.body, {user: dbUser._id })
+    .create({type: req.body.type, title: req.body.title, description: req.body.description, whatYouNeed: req.body.whatYouNeed, user: dbUser._id })
     .then(dbModel => {console.log(dbModel); res.json(dbModel)}))
     .catch(err => res.status(422).json(err))
   }
