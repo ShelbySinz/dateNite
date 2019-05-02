@@ -3,22 +3,24 @@ const db = require("../models");
 // Defining methods for the booksController
 module.exports = {
   findByUsername: function(req, res) {
+    
     db.User
 
-    .findOne({username: req.user.username}).then(dbUser => 
-      res.json(dbUser))
-    //   db.Dates
-    //   .find({user:dbUser._id})
-    //   .then(dbDates => {console.log(dbUser._id), res.json(dbDates)}))
-    // .catch(err => console.log(err))
-  },
-  findAll: function(req, res) {
-    console.log("findAll", req.body)
-    console.log("USER", req.user.username) 
-    db.Dates
-      .find(req.query)
-      .then(dbModel => {console.log(dbModel);res.json(dbModel)})
-      .catch(err => res.status(422).json(err));
+    .findOne({_id: req.user.id}).then(dbUser => 
+    
+      db.Dates
+      .find().where({user:dbUser._id})
+      .then(dbDates => {console.log(dbUser._id), res.json(dbDates)}))
+    .catch(err => console.log(err))
+  // 
+  
+  // findAll: function(req, res) {
+  //   console.log("findAll", req.body)
+  //   console.log("USER", req.user.username) 
+  //   db.Dates
+  //     .find(req.query)
+  //     .then(dbModel => {console.log(dbModel);res.json(dbModel)})
+  //     .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
     db.Dates

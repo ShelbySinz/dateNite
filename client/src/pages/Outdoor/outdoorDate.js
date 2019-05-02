@@ -6,7 +6,7 @@ import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import API from "../../utils/API";
 import SaveBtn from "../../components/SaveBtn";
 import outdoorJson from "../../outdoor.json";
-
+import axios from "axios";
 //create component 
 class Outdoor extends Component {
 		//set state
@@ -17,7 +17,11 @@ class Outdoor extends Component {
 			type:"",
 			description: "",
 			whatYouNeed: ""    
-		};
+    };
+    
+    componentDidMount(){
+      axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+    }
     
     //handle input change, handle updating component state when the user types into input field
     handleInputChange = event => {
