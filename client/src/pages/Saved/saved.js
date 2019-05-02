@@ -40,9 +40,9 @@ class Saved extends Component {
 
     render() {
         return (
-          <Container fluid>
+          <Container>
             <Row>
-              <Col size="md-12">
+              <Col size="m12">
                 <Jumbotron>
                   <h1>Your Saved Date Ideas!</h1>
                   {localStorage.getItem('jwtToken') &&
@@ -53,14 +53,14 @@ class Saved extends Component {
                   </Col>
                   </Row>
                   <Row>
-                      <Col size= "md-3"></Col>
-                   <Col size= "md-6">
+                      <Col size= "m3"></Col>
+                   <Col size= "m6">
                    {this.state.saved.length ? (
                   <List>
                       {this.state.saved.map(saved => {
                           return (
                    <ListItem key={saved._id}>
-                   <small className="float-right">{saved.type}</small>
+                   <small className="right">{saved.type}</small>
                    <br></br>
                     <strong><h3>{saved.title}</h3></strong>
                    
@@ -68,11 +68,11 @@ class Saved extends Component {
                     <br></br>
                     <p>{saved.description}</p>       
                    <br></br>
-                   <p className="text-muted">What you Need: {saved.whatYouNeed}</p>
+                   <p className="flow-text">What you Need: {saved.whatYouNeed}</p>
                         
-                   <DeleteBtn className="float-right" onClick={() => this.deleteDate(saved._id)} />
+                   <DeleteBtn className="right" onClick={() => this.deleteDate(saved._id)} />
                    
-                   <a className="float-left" href={`mailto:?body= Your Saved Date: ` + saved.title + " description: "+ saved.description + "What you need: " + saved.whatYouNeed} target="_top"><i className="far fa-envelope"></i></a>
+                   <a className="left" href={`mailto:?body= Your Saved Date: ` + saved.title + " description: "+ saved.description + "What you need: " + saved.whatYouNeed} target="_top"><i className="far fa-envelope"></i></a>
                    </ListItem>
                           )  
                     })}

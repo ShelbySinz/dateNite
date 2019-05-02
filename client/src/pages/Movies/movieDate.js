@@ -50,9 +50,9 @@ class MoviesTv extends Component {
     
       render() {
         return (
-          <Container fluid>
+          <Container>
             <Row>
-              <Col size="md-12">
+              <Col size="m12">
                 <Jumbotron>
                   <h1>Movies and Tv Date Ideas!</h1>
                   </Jumbotron>
@@ -61,7 +61,7 @@ class MoviesTv extends Component {
                   </Row>
                   <Row>
                     
-                   <Col size= "md-7">
+                   <Col size= "m7">
                   <List>
                       
                     {movieJson.map( dates => {
@@ -70,11 +70,11 @@ class MoviesTv extends Component {
                       return (
                         <ListItem key={dates.title}  >
                             
-                           <small className= "float-right">{dates.type}</small>
+                           <small className= "right">{dates.type}</small>
                           <br></br>
                            <strong><h1>{dates.title}</h1></strong> 
                            <p>{dates.description}</p>
-                            <p className="text-muted">What you Need: {dates.whatYouNeed}</p>
+                            <p className="flow-text">What you Need: {dates.whatYouNeed}</p>
                           <SaveBtn  
                             onClick={ () => this.setState({title:dates.title, type:dates.type, description:dates.description, whatYouNeed:dates.whatYouNeed},this.SaveDates)}                                    
                           ></SaveBtn>
@@ -86,7 +86,7 @@ class MoviesTv extends Component {
                   <br></br>
                   <br></br>
                   </Col>
-                 <Col size="md-5">
+                 <Col size="m5">
                 <form>
                   <Input style={{marginTop:30}}
                     value={this.state.search}
@@ -119,8 +119,8 @@ class MoviesTv extends Component {
                            <img src={this.state.movies.Poster} alt={this.state.movies.Title}></img>
                            <br></br>
                            <br></br>
-                         <a className="float-right"href={this.state.movies.Website} target="_blank"><i className="fas fa-eye"></i></a>
-                         <a className="float-left" href={"mailto:?body= Name of Movie:" + this.state.movies.Title + " Plot: "+ this.state.movies.Plot} target="_top"><i className="far fa-envelope"></i></a> 
+                         <a className="right"href={this.state.movies.Website} target="_blank"><i className="fas fa-eye"></i></a>
+                         <a className="left" href={"mailto:?body= Name of Movie:" + this.state.movies.Title + " Plot: "+ this.state.movies.Plot} target="_top"><i className="far fa-envelope"></i></a> 
                         </ListItem>
                       
                   </List>

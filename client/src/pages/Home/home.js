@@ -10,14 +10,14 @@ function Home() {
       
         return(
 
-            <Container fluid>
+            <Container>
             
             <Jumbotron>
                 <h1>Welcome to DateNite!</h1>
             </Jumbotron>
                 <Row>
-                    <Col size = "md-2"></Col>
-                        <Col size="md-3">
+                    <Col size = "m2"></Col>
+                        <Col size="m3">
                             <Card
                                 name={homePage[0].name}
                                 image={homePage[0].image}>
@@ -26,7 +26,7 @@ function Home() {
                             <br></br>                       
                             </Card>
                         </Col>
-                        <Col size="md-3">
+                        <Col size="m3">
                         <Card
                             name={homePage[4].name}
                             image={homePage[4].image}
@@ -36,7 +36,7 @@ function Home() {
                         <br></br>
                         </Card>
                         </Col>
-                        <Col size= "md-3">
+                        <Col size= "m3">
                             <Card
                                 name={homePage[2].name}
                                 image={homePage[2].image}
@@ -49,8 +49,8 @@ function Home() {
                 </Row>
             <br></br>
                 <Row>
-                    <Col size = "md-3"></Col> 
-                        <Col size="md-3">
+                    <Col size = "m3"></Col> 
+                        <Col size="m3">
                             <Card
                                 name={homePage[3].name}
                                 image={homePage[3].image}
@@ -61,7 +61,7 @@ function Home() {
                             </Card>
                     </Col>
                    
-                    <Col size = "md-3">
+                    <Col size = "m3">
                             <Card
                                 name={homePage[1].name}
                                 image={homePage[1].image}

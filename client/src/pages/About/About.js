@@ -12,7 +12,7 @@ function About() {
       
         return(
 
-            <Container fluid>
+            <Container>
             <Jumbotron>
                 <h1>Welcome to DateNite!</h1>
                 <h4>Your one-stop shop for all of your date planning needs.</h4>
@@ -35,20 +35,20 @@ function About() {
             <Jumbotron2> 
                 <h5>Brought to you by:</h5>
                 <Row>
-                <Col size = "md-2"></Col> 
-                        <Col size="md-3">
+                <Col size = "m2"></Col> 
+                        <Col size="m3">
                             <Card
                             >
                              Shelby Sinsheimer
                             </Card>
                         </Col>
-                        <Col size="md-3">
+                        <Col size="m3">
                             <Card
                             >
                              Kelsey Tobin
                             </Card>
                         </Col>
-                        <Col size="md-3">
+                        <Col size="m3">
                             <Card
                             >
                              Armi Lawrence

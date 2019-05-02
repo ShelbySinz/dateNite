@@ -52,9 +52,9 @@ class Outdoor extends Component {
 		//render and return container, make use of layout components
 		render() {
 			return (
-				<Container fluid>
+				<Container>
 					<Row>
-						<Col size="md-12">
+						<Col size="m12">
 							<Jumbotron>
 								<h1>Outdoor Date Ideas!</h1>
 								<p>Spend some time outside and get to know eachother! Use the search bar below to find the best hiking 
@@ -64,7 +64,7 @@ class Outdoor extends Component {
 								</Col>
 								</Row>
 								<Row>
-								 <Col size= "md-8">
+								 <Col size= "m8">
 								 <List>
                       
                     {outdoorJson.map( dates => {
@@ -73,7 +73,7 @@ class Outdoor extends Component {
                       return (
                         <ListItem key={dates.title}  >
 
-                          <small className="float-right">{dates.type}</small>
+                          <small className="right">{dates.type}</small>
                           <br></br>
                            
                            <strong><h2>{dates.title}</h2></strong> 
@@ -98,7 +98,7 @@ class Outdoor extends Component {
                   <br></br>
                   <br></br>
                   
-                 <Col size="md-6">
+                 <Col size="m6">
                 <form>
                   <Input
                     value={this.state.search}
@@ -114,7 +114,7 @@ class Outdoor extends Component {
                   </FormBtn>
                 </form>
               </Col>
-              <Col size="md-6 sm-12">
+              <Col size="m6 s12">
 							{/* {this.state.recipes.length ? (
                   <List>
                     {this.state.recipes.map(food => {

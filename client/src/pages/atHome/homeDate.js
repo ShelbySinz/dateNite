@@ -53,9 +53,9 @@ class AtHome extends Component {
     
       render() {
         return (
-          <Container fluid>
+          <Container >
             <Row>
-              <Col size="md-12">
+              <Col size="m12">
                 <Jumbotron>
                   <h1>At Home Date Ideas!</h1>
                   </Jumbotron>
@@ -65,7 +65,7 @@ class AtHome extends Component {
                   <Row>
                   
                    
-                   <Col size= "md-7">
+                   <Col size= "m7">
                   <List>
                       
                     {HomeJson.map( dates => {
@@ -74,14 +74,14 @@ class AtHome extends Component {
                       return (
                         <ListItem key={dates.title}  >
 
-                          <small className="float-right">{dates.type}</small>
+                          <small className="right">{dates.type}</small>
                           <br></br>
                            
                            <strong><h2>{dates.title}</h2></strong> 
                            <p>{dates.description}</p>
                             <p>What you Need: {dates.whatYouNeed}</p>
                           
-                           <p className="text-muted">Suggested Recipe: {dates.SuggestedRecipe}</p>
+                           <p className="flow-text">Suggested Recipe: {dates.SuggestedRecipe}</p>
                           
                          <SaveBtn   
                             onClick={() => this.setState({title:dates.title, type:dates.type, description:dates.description, whatYouNeed:dates.whatYouNeed},this.SaveDates)}                                    
@@ -95,7 +95,7 @@ class AtHome extends Component {
                   <br>
                   </br>
                   <br></br>
-                 <Col size="md-5">
+                 <Col size="m5">
                 <form>
                   <Input style={{marginTop: 30 }}
                     value={this.state.search}
@@ -124,11 +124,11 @@ class AtHome extends Component {
                           <strong> <h5 className="mb-1">{food.title}</h5> </strong>
                            
                          
-                           <img style={{height:200, width:200}}className={"img-fluid"} src={food.image_url} alt={food.title}></img>
+                           <img style={{height:200, width:200}}className={"responsive-img"} src={food.image_url} alt={food.title}></img>
                            <br></br>
                            <br></br>
-                           <a  className="float-right"  href={food.source_url} target="_blank"><i className="fas fa-eye"></i></a>
-                          <a className= "float-left"href={"mailto:?body= link to recipe:" + food.source_url} target="_top"><i className="far fa-envelope"></i></a>
+                           <a  className="right"  href={food.source_url} target="_blank"><i className="fas fa-eye"></i></a>
+                          <a className= "left"href={"mailto:?body= link to recipe:" + food.source_url} target="_top"><i className="far fa-envelope"></i></a>
                           
                         </ListItem>
                       );

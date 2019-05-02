@@ -4,9 +4,9 @@ import Jumbotron from "../components/Jumbotron/Jumbotron";
 
 function NoMatch() {
   return (
-    <Container fluid>
+    <Container>
       <Row>
-        <Col size="md-12">
+        <Col size="12">
           <Jumbotron>
             <h1>404 Page Not Found</h1>
             <h1>

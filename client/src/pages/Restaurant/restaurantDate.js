@@ -50,7 +50,7 @@ class Restaurant extends Component {
         return (
           <Container fluid>
             <Row>
-              <Col size="md-12">
+              <Col size="m12">
                 <Jumbotron>
                   <h1>Restaurant Date Ideas!</h1>
                   <p>Spend the night out and spend some money! Need help looking up restaurants? Use the search bar below - just enter the type of foods you'd like to eat!</p>
@@ -59,14 +59,14 @@ class Restaurant extends Component {
                   </Col>
                   </Row>
                   <Row>
-                   <Col size= "md-8">
+                   <Col size= "m8">
                   <List>                
                     {restaurantJson.map( dates => {
                       console.log(dates)
                       
                       return (
                         <ListItem key={dates.title}  >
-                          <small className = "float-right">{dates.type}</small>
+                          <small className = "right">{dates.type}</small>
                           <br></br>
                            
                            <strong><h2>{dates.title}</h2></strong> 
@@ -81,15 +81,15 @@ class Restaurant extends Component {
                     })}
                   </List>
                 </Col>
-                  <Col size= "md-4">
-                  <img className={"img-fluid"} src="https://images-na.ssl-images-amazon.com/images/I/81UUBibOQvL._RI_.jpg" alt="Date Night"></img>
+                  <Col size= "m4">
+                  <img className={"responsive-img"} src="https://images-na.ssl-images-amazon.com/images/I/81UUBibOQvL._RI_.jpg" alt="Date Night"></img>
                   
                   </Col>
                   </Row>
                   <br></br>
                   <br></br>
                   <Row>
-                 <Col size="md-6">
+                 <Col size="m6">
                 <form>
                   <Input
                     value={this.state.search}
@@ -105,7 +105,7 @@ class Restaurant extends Component {
                   </FormBtn>
                 </form>
               </Col>
-              <Col size="md-6 sm-12">
+              <Col size="m6 s12">
                 {this.state.restaurant.length ? (
                     <List>
 
@@ -116,8 +116,8 @@ class Restaurant extends Component {
                             <p>Location: {result.formatted_address}</p>
                             <p>Price (4 is very expensive!): {result.price_level}</p>
                             <p>Rating (out of 5 stars!): {result.rating}</p>                           
-                            <a className="float-right" href={"https://www.google.com/maps/place/" + result.formatted_address} target="_blank"><i className="fas fa-eye"></i></a>
-                            <a className="float-left" href={"mailto:?body= Address to"+ result.name + ":" + result.formatted_address} target="_top"><i className="far fa-envelope"></i></a>
+                            <a className="right" href={"https://www.google.com/maps/place/" + result.formatted_address} target="_blank"><i className="fas fa-eye"></i></a>
+                            <a className="left" href={"mailto:?body= Address to"+ result.name + ":" + result.formatted_address} target="_top"><i className="far fa-envelope"></i></a>
                       </ListItem>
                       ))}
                     </List>   

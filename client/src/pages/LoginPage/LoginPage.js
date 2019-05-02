@@ -8,7 +8,7 @@ import LoginPortal from "../../components/LoginPortal/LoginPortal";
 function LoginPage() {
     
     return (
-        <Container fluid>
+        <Container>
             <Jumbotron />
 
             <LoginPortal />

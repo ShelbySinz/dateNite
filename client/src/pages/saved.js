@@ -8,9 +8,9 @@ class Saved extends Component {
 
     render() {
         return (
-          <Container fluid>
+          <Container>
             <Row>
-              <Col size="md-12">
+              <Col size="m12">
                 <Jumbotron>
                   <h1>At Home Date Ideas!</h1>
                   </Jumbotron>
@@ -18,7 +18,7 @@ class Saved extends Component {
                   </Col>
                   </Row>
                   <Row>
-                   <Col size= "md-12">
+                   <Col size= "m12">
 
 
 

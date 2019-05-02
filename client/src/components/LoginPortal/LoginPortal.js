@@ -60,12 +60,12 @@ class LoginPortal extends Component {
       </div>
 
       <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
+      <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
-                  value={username}
+                  value={password}
                   id="username"
-                  type="username"
+                  type="text"
                 />
                 <label>Email</label>
               </div>
@@ -74,7 +74,7 @@ class LoginPortal extends Component {
                   onChange={this.onChange}
                   value={password}
                   id="password"
-                  type="password"
+                  type="text"
                 />
                 <label>Password</label>
               </div>
