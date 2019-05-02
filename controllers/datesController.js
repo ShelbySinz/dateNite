@@ -5,8 +5,10 @@ module.exports = {
   findByUsername: function(req, res) {
     db.User
 
-    .findOne({username: req.user.username}).then(dbUser => 
-      res.json(dbUser))
+    .findOne({username: req.user.username})
+      .populate("dates")
+      .then(dbUser => 
+        res.json(dbUser))
     //   db.Dates
     //   .find({user:dbUser._id})
     //   .then(dbDates => {console.log(dbUser._id), res.json(dbDates)}))
@@ -34,6 +36,6 @@ module.exports = {
     db.Dates
     .create({type: req.body.type, title: req.body.title, description: req.body.description, whatYouNeed: req.body.whatYouNeed, user: dbUser._id })
     .then(dbModel => {console.log(dbModel); res.json(dbModel)}))
-    .catch(err => res.status(422).json(err))
+    .catch(err => res.status(422).json(err));
   }
 };
