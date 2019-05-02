@@ -2,7 +2,9 @@
 import React, { Component } from "react";
 // import logo from "./logo.svg";
 
+// Import Materialize
 import 'materialize-css/dist/css/materialize.min.css';
+import M from "materialize-css";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
@@ -21,6 +23,13 @@ import Register from "./components/Register/Register";
 // import registerServiceWorker from "./registerServiceWorker";
 
 class App extends Component {
+    
+  //initialize materialze items
+  componentDidMount() {
+    // Auto initialize all the things!
+    M.AutoInit();
+  }
+  
   render() {
     return (
       <Router>

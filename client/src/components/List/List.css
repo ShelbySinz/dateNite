@@ -6,29 +6,29 @@
   overflow-x: hidden;
 } */
 
-.list-overflow-container ul {
+.list-container ul {
   margin: 0;
   background-color: aquamarine;
 }
 
-.list-overflow-container li {
+.list-container li {
   border-radius: 0px;
   text-align: center;
 
 }
 
-.list-overflow-container li * {
+.list-container li * {
   cursor: pointer;
 }
 
-.list-overflow-container li a {
+.list-container li a {
   color: #2A878C;
 }
 
-.list-overflow-container li:first-child {
+.list-container li:first-child {
   border-top: none;
 }
 
-.list-overflow-container li:last-child {
+.list-container li:last-child {
   border-bottom: none;
 }

@@ -7,7 +7,7 @@ function Card(props) {
       style={{ textAlign: "center" }}
       className="card"
     >
-      <div className="img-container"
+      <div className="card-image"
       >
         <img alt={props.name} src={props.image} />
       </div>

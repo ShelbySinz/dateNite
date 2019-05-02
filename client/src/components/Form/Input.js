@@ -2,8 +2,10 @@ import React from "react";
 
 export function Input(props) {
   return (
-    <div className="form">
-      <input className="form-control" {...props} />
-    </div>
+    <form>
+      <div className="input-field">
+        <input {...props} />
+      </div>
+    </form>
   );
 }

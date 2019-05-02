@@ -6,7 +6,7 @@
   overflow-x: hidden;
 } */
 
-.list-overflow-container ul {
+.list-container ul {
   margin: 20px;
   padding-bottom: 40px;
   
@@ -20,20 +20,20 @@
  
 }
 
-.list-overflow-container li * {
+.list-container li * {
   cursor: pointer;
 }
 
-.list-overflow-container li a {
+.list-container li a {
   color: #2A878C;
 }
 
-.list-overflow-container li:first-child {
+.list-container li:first-child {
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
 }
 
-.list-overflow-container li:last-child {
+.list-container li:last-child {
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
 }

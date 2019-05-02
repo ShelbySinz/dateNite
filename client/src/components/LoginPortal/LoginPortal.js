@@ -43,25 +43,66 @@ class LoginPortal extends Component {
     const { username, password, message } = this.state;
     return (
       <div class="container">
-        <form class="form-signin" onSubmit={this.onSubmit}>
+        <div style={{ marginTop: "4rem" }} className="row">
           {message !== '' &&
             <div class="alert alert-warning alert-dismissible" role="alert">
               { message }
             </div>
           }
-          <h2 class="form-signin-heading">Please sign in</h2>
-          <label for="inputEmail" class="sr-only">Email address</label>
-          <input type="email" class="form-control" placeholder="Email address" name="username" value={username} onChange={this.onChange} required/>
-          <label for="inputPassword" class="sr-only">Password</label>
-          <input type="password" class="form-control" placeholder="Password" name="password" value={password} onChange={this.onChange} required/>
-          <button class="btn btn-lg btn-primary btn-block" type="submit" >Login</button>
-          <p>
-            Not a member? <Link to="/register"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Register here</Link>
-          </p>
-        </form>
+
+      <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+        <h4>
+          <b>Login</b> below
+        </h4>
+        <p className="grey-text text-darken-1">
+          Don't have an account? <Link to="/register">Register</Link>
+        </p>
+      </div>
+
+      <form noValidate onSubmit={this.onSubmit}>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={username}
+                  id="username"
+                  type="username"
+                />
+                <label>Email</label>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={password}
+                  id="password"
+                  type="password"
+                />
+                <label>Password</label>
+              </div>
+              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+                <button
+                  style={{
+                    width: "150px",
+                    borderRadius: "3px",
+                    letterSpacing: "1.5px",
+                    marginTop: "1rem"
+                  }}
+                  type="submit"
+                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                >
+                  Login
+                </button>
+              </div>
+            </form>
+        </div>
       </div>
     );
   }
 }
 
 export default LoginPortal;
+{/* <label for="inputEmail" class="sr-only">Email address</label>
+<input type="email" class="form-control" placeholder="Email address" name="username" value={username} onChange={this.onChange} required/>
+<label for="inputPassword" class="sr-only">Password</label>
+<input type="password" class="form-control" placeholder="Password" name="password" value={password} onChange={this.onChange} required/>
+<button class="btn btn-lg btn-primary btn-block" type="submit" >Login</button>
+ */}

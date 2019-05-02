@@ -3,9 +3,9 @@ import "./List.css";
 
 export function List({ children }) {
   return (
-    <div className="list-overflow-container">
+    <div className="list-container">
      
-      <ul className="list-group rounded">{children}</ul>
+      <ul className="collection">{children}</ul>
     </div>
   );
 }
