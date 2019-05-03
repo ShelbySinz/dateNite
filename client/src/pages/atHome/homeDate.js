@@ -18,7 +18,7 @@ class AtHome extends Component {
         whatYouNeed: ""
       };
       componentDidMount() {
-        axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+         axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
        
           }
     

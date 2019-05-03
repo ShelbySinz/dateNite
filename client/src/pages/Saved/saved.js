@@ -6,14 +6,23 @@ import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import API from "../../utils/API";
 import DeleteBtn from "../../components/deleteDate";
 import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
+
 import axios from 'axios';
 
 class Saved extends Component {
-
-    state ={
+  constructor(props) {
+    super(props);
+    this.state ={
         saved: []
-    }
+    };
+  }
+
+    
+   componentDidMount(){
+   
+    axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+     this.getSavedDates();
+   }
 
    getSavedDates = () => {
        API.getSavedDates()
@@ -22,10 +31,7 @@ class Saved extends Component {
        console.log(this.state.saved)
    }
 
-   componentDidMount(){
-    axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
-       this.getSavedDates();
-   }
+
 
 
    deleteDate = id => {

@@ -19,9 +19,9 @@ class Restaurant extends Component {
           whatYouNeed: ""    
         };
 
-    //  componentDidMount(){
-    //    this.handleApiSubmit()
-    //  };
+     componentDidMount(){
+      axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+     };
 
       componentDidMount() {
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');   

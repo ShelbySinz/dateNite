@@ -6,6 +6,7 @@ import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import API from "../../utils/API";
 import movieJson from "../../movies.json";
 import SaveBtn from "../../components/SaveBtn";
+import axios from "axios";
 
 class MoviesTv extends Component {
     state = {
@@ -21,6 +22,8 @@ class MoviesTv extends Component {
 
      componentDidMount(){
        this.handleApiSubmit("elf")
+      axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+      
      }
 
       handleInputChange = event => {
