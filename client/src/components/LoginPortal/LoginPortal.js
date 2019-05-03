@@ -58,41 +58,51 @@ class LoginPortal extends Component {
           Don't have an account? <Link to="/register">Register</Link>
         </p>
       </div>
+      
+      <form>
+          {/* email input */}
+          <div className="input-field col s12">
+            <input 
+              type="text" 
+              class="validate" 
+              // placeholder="Email address" 
+              name="username" 
+              value={username} 
+              onChange={this.onChange} 
+              required
+              />
+            <label for="inputEmail">Email</label>
+          </div>
 
-      <form noValidate onSubmit={this.onSubmit}>
-      <div className="input-field col s12">
-                <input
-                  onChange={this.onChange}
-                  value={password}
-                  id="username"
-                  type="text"
-                />
-                <label>Email</label>
-              </div>
-              <div className="input-field col s12">
-                <input
-                  onChange={this.onChange}
-                  value={password}
-                  id="password"
-                  type="text"
-                />
-                <label>Password</label>
-              </div>
-              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
-                  type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
-                  Login
-                </button>
-              </div>
-            </form>
+          {/* password input */}
+          <div className="input-field col s12">
+            <input 
+              type="text" 
+              class="validate" 
+              // placeholder="Password" 
+              name="password" 
+              value={password} 
+              onChange={this.onChange} 
+              required
+            />
+            <label for="inputPassword">Password</label>
+          </div>
+
+          <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+            <button
+              style={{
+                width: "150px",
+                borderRadius: "3px",
+                letterSpacing: "1.5px",
+                marginTop: "1rem"
+              }}
+              type="submit"
+              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+            >
+              Login
+            </button>
+            </div>
+          </form>
         </div>
       </div>
     );
@@ -100,9 +110,4 @@ class LoginPortal extends Component {
 }
 
 export default LoginPortal;
-{/* <label for="inputEmail" class="sr-only">Email address</label>
-<input type="email" class="form-control" placeholder="Email address" name="username" value={username} onChange={this.onChange} required/>
-<label for="inputPassword" class="sr-only">Password</label>
-<input type="password" class="form-control" placeholder="Password" name="password" value={password} onChange={this.onChange} required/>
-<button class="btn btn-lg btn-primary btn-block" type="submit" >Login</button>
- */}
+ 

@@ -7,7 +7,7 @@ function Nav() {
     <nav> 
       <div className="dropdown">
       
-        <a className="dropdown-trigger" href="#!" data-target="dropdown1">
+        <a className="dropdown-trigger btn waves-effect waves-light hoverable" href="#!" data-target="dropdown1">
          DateNite <i className="fas fa-angle-double-down"></i>
           <ul id="dropdown1" className="dropdown-content">
             <li><a className="dropdown-item" href="/">Login</a></li>
