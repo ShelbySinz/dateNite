@@ -37,9 +37,11 @@ export default {
   //retrieves a restaurant location from our external api
   getRestaurant : function(type) {
     const YOUR_API_KEY = "AIzaSyDFpd-2EoMstvbarr8ywlER8dEv2nzfQhY";
-    return axios.get(`${'https://cors-anywhere.herokuapp.com/'}
-      https://maps.googleapis.com/maps/api/place/textsearch/json?query=${type}
-        `+"+restaurants+in+Denver&key="+YOUR_API_KEY);
+    // return axios.get(`${'https://cors-anywhere.herokuapp.com/'}
+    //   https://maps.googleapis.com/maps/api/place/textsearch/json?query=${type}
+    //     `+"+restaurants+in+Denver&key="+YOUR_API_KEY);
+    return axios.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+type
+          +"+restaurants+in+Denver&key="+YOUR_API_KEY);
   },
 
   getHike : function(lat, lon) {

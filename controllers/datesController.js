@@ -3,10 +3,11 @@ const db = require("../models");
 // Defining methods for the booksController
 module.exports = {
   findByUsername: function(req, res) {
+
     db.User.find({username: req.user.username}).then(dbUser => {console.log(dbUser),
       db.Dates.find({user: dbUser[0]._id})
       .then(dbModel => {console.log(dbModel); res.json(dbModel)})})
-    
+   
   },
   remove: function(req, res) {
     db.Dates
@@ -22,7 +23,9 @@ module.exports = {
     db.User.findOne({username: req.user.username}).then(dbUser => {console.log(dbUser),
     db.Dates
     .create({type: req.body.type, title: req.body.title, description: req.body.description, whatYouNeed: req.body.whatYouNeed, user: dbUser._id })
+
     .then(dbModel => {console.log(dbModel); res.json(dbModel)})})
     .catch(err => res.status(422).json(err))
     }
+
 };

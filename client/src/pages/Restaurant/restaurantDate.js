@@ -7,6 +7,7 @@ import API from "../../utils/API";
 import restaurantJson from "../../restaurants.json";
 import SaveBtn from "../../components/SaveBtn";
 import axios from "axios";
+
 class Restaurant extends Component {
 
     state = {
@@ -21,6 +22,10 @@ class Restaurant extends Component {
      componentDidMount(){
       axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
      };
+
+      componentDidMount() {
+        axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');   
+      };
 
       handleInputChange = event => {
         const { name, value } = event.target;
