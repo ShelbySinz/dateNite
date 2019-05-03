@@ -44,10 +44,18 @@ export default {
           +"+restaurants+in+Denver&key="+YOUR_API_KEY);
   },
 
-  getHike : function(lat, lon) {
-    const HIKE_API_KEY = "200457234-aadf9493c102fc6c8f6fe159530e1e46";
-    
-    return axios.get('http://www.hikingproject.com/data/get-trails?'+lat+"&"+lon+"&"+HIKE_API_KEY);
+  getOutdoor : function(query) {
+    const queryURL = "https://trailapi-trailapi.p.rapidapi.com/?q-city-cont="+query+"&limit=25)";
+    return axios.get(queryURL)
+      .header("X-RapidAPI-Host", "trailapi-trailapi.p.rapidapi.com")
+      .header("X-RapidAPI-Key", "955275a486mshd82e401a3a0f228p141a7fjsnf9e9dc8720bb")
+      .end(function (result) {
+        console.log(result.status, result.headers, result.body);
+    }); 
   }
-
+  
 };
+
+
+// hiking project url initial
+// return axios.get('http://www.hikingproject.com/data/get-trails?'+lat+"&"+lon+"&"+HIKE_API_KEY);

@@ -101,7 +101,7 @@ class AtHome extends Component {
                     value={this.state.search}
                     onChange={this.handleInputChange}
                     name="search"
-                    placeholder="(chicken)"
+                    placeholder="Chicken"
                   />
               
                   <FormBtn

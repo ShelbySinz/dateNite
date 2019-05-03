@@ -12,9 +12,11 @@ class Outdoor extends Component {
 		//set state
 		state = {
 			outdoor: [],
-			search: "", 
-			title:"",
-			type:"",
+      search: "", 
+      // searchCity: "",
+      // searchState: "",
+			title: "",
+			type: "",
 			description: "",
 			whatYouNeed: ""    
     };
@@ -33,7 +35,7 @@ class Outdoor extends Component {
 
     //handle api/query params function
 		handleApiSubmit = query => {        
-			API.getRestaurant(query).then( res => this.setState
+			API.getOutdoor(query).then( res => this.setState
 				({outdoor: res.data.results}));
       console.log(this.state.outdoor);
 		};
@@ -68,7 +70,7 @@ class Outdoor extends Component {
 								</Col>
 								</Row>
 								<Row>
-								 <Col size= "md-8">
+								 <Col size= "md-7">
 								 <List>
                       
                     {outdoorJson.map( dates => {
@@ -102,48 +104,37 @@ class Outdoor extends Component {
                   <br></br>
                   <br></br>
                   
-                 <Col size="md-6">
+                 <Col size="md-5">
                 <form>
-                  <Input
+                <Input
                     value={this.state.search}
                     onChange={this.handleInputChange}
                     name="search"
-                    placeholder="(Boulder, CO)"
+                    placeholder="Boulder"
                   />
-              
+                {/* <Input
+                    value={this.state.searchCity}
+                    onChange={this.handleInputChange}
+                    name="city"
+                    placeholder="Jackson"
+                  />
+                  <Input
+                    value={this.state.searchState}
+                    onChange={this.handleInputChange}
+                    name="state"
+                    placeholder="Wyoming"
+                  />
+               */}
                   <FormBtn
                     onClick={this.handleFormSubmit}
                   >
-                    Find Hikes
+                    Find Activities
                   </FormBtn>
                 </form>
               </Col>
               <Col size="md-6 sm-12">
-							{/* {this.state.recipes.length ? (
-                  <List>
-                    {this.state.recipes.map(food => {
-                      console.log(food)
-                      
-                      return (
-                        <ListItem key={food.recipe_id}  >
-                           
-                           <h5 className="mb-1">{food.title}</h5> 
-                           
-                          <br></br>
-                           <br></br>
-                           <img className={"img-fluid"} src={food.image_url} alt={food.title}></img>
-                           <br></br>
-                           <br></br>
-                           <a  className="float-right"  href={food.source_url} target="_blank"><i className="fas fa-eye"></i></a>
-                          <a className= "float-left"href={"mailto:?body= link to recipe:" + food.source_url} target="_top"><i className="far fa-envelope"></i></a>
-                          
-                        </ListItem>
-                      );
-                    })}
-                  </List>
-                ) : (
-                  <h3>No Results to Display</h3>
-                )} */}
+                {/* return response here */}
+
               </Col>
             </Row>
           </Container>
