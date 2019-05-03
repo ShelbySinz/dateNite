@@ -6,8 +6,8 @@ require("dotenv").config();
 export default {
   // Gets all saved dates
   saveDates: function(dateData) {
-    return axios.post("/api/dates", dateData);
-     
+    return axios.post("/api/dates", dateData, {"Authorization": localStorage.getItem('jwtToken') });
+    
   },
   // Gets a saved date with the given id
   getSavedDates: function() {
