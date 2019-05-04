@@ -12,9 +12,8 @@ class Outdoor extends Component {
 		//set state
 		state = {
 			outdoor: [],
-      search: "", 
-      // searchCity: "",
-      // searchState: "",
+      searchCity: "", 
+      searchState: "",
 			title: "",
 			type: "",
 			description: "",
@@ -34,17 +33,19 @@ class Outdoor extends Component {
 		};
 
     //handle api/query params function
-		handleApiSubmit = query => {        
-			API.getOutdoor(query).then( res => this.setState
-				({outdoor: res.data.results}));
+		handleApiSubmit = (queryCity) => {        
+			API.getCoordinates(queryCity).then( res => this.setState
+				({outdoor: res.data}));
       console.log(this.state.outdoor);
 		};
 		
 		//handle form submit function
 		handleFormSubmit = event => {
 			event.preventDefault();
-			this.handleApiSubmit(this.state.search);
-			console.log(this.state.search);
+      this.handleApiSubmit(this.state.searchCity);
+      // this.handleApiSubmit(this.state.searchState);
+      console.log(this.state.searchCity);
+      // console.log(this.state.searchState);
 		};
     
     //save date function
@@ -73,9 +74,7 @@ class Outdoor extends Component {
 								 <Col size= "md-7">
 								 <List>
                       
-                    {outdoorJson.map( dates => {
-                      console.log(dates)
-                      
+                    {outdoorJson.map( dates => { 
                       return (
                         <ListItem key={dates.title}  >
 
@@ -104,24 +103,24 @@ class Outdoor extends Component {
                   <br></br>
                   <br></br>
                   
-                 <Col size="md-5">
+                <Col size="md-5">
                 <form>
-                <Input
+                {/* <Input
                     value={this.state.search}
                     onChange={this.handleInputChange}
                     name="search"
                     placeholder="Boulder"
-                  />
-                {/* <Input
+                  /> */}
+                <Input
                     value={this.state.searchCity}
                     onChange={this.handleInputChange}
-                    name="city"
-                    placeholder="Jackson"
+                    name="searchCity"
+                    placeholder="Jackson WY"
                   />
-                  <Input
+                  {/* <Input
                     value={this.state.searchState}
                     onChange={this.handleInputChange}
-                    name="state"
+                    name="searchState"
                     placeholder="Wyoming"
                   />
                */}
@@ -131,10 +130,28 @@ class Outdoor extends Component {
                     Find Activities
                   </FormBtn>
                 </form>
-              </Col>
-              <Col size="md-6 sm-12">
-                {/* return response here */}
 
+                
+                {/* return response here */}
+                {this.state.outdoor.length ? (
+                  <List>
+                    {this.state.outdoor.map(places => {
+                      console.log(places)
+
+                      return (
+                        <ListItem key={places.id}>
+                          <strong>
+                            <h5 className="mb-1">{places.coordinates}</h5>
+                          </strong>
+
+
+                        </ListItem>
+                      );
+                    })}
+                  </List>
+                ) : (
+                  <h3>No Results</h3>
+                )}
               </Col>
             </Row>
           </Container>

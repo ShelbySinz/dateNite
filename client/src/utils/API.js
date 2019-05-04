@@ -44,18 +44,34 @@ export default {
           +"+restaurants+in+Denver&key="+YOUR_API_KEY);
   },
 
-  getOutdoor : function(query) {
-    const queryURL = "https://trailapi-trailapi.p.rapidapi.com/?q-city-cont="+query+"&limit=25)";
-    return axios.get(queryURL)
-      .header("X-RapidAPI-Host", "trailapi-trailapi.p.rapidapi.com")
-      .header("X-RapidAPI-Key", "955275a486mshd82e401a3a0f228p141a7fjsnf9e9dc8720bb")
-      .end(function (result) {
-        console.log(result.status, result.headers, result.body);
-    }); 
+  //feed user query into mapbox api to convert city name to lat/lon for hiking project api
+  getCoordinates : function(queryCity) {
+    const YOUR_API_KEY = "AIzaSyDFpd-2EoMstvbarr8ywlER8dEv2nzfQhY";
+    return axios.get("https://cors-anywhere.herokuapp.com/"+
+      "https://maps.googleapis.com/maps/api/place/textsearch/json?query=hiking+in+"+queryCity+"&key="+YOUR_API_KEY);
+    
+    
+    
+    // ("https://api.mapbox.com/geocoding/v5/mapbox.places/"
+    //   +queryCity+".json?&access_token="+MAPBOX_API+"&types=poi=outdoors");
+
+    // https://api.mapbox.com/geocoding/v5/mapbox.places/Boulder.json?country=us&access_token=[your_token]
   }
-  
 };
 
 
 // hiking project url initial
 // return axios.get('http://www.hikingproject.com/data/get-trails?'+lat+"&"+lon+"&"+HIKE_API_KEY);
+
+  
+
+// getOutdoor : function(query) {
+  //   const queryURL = "https://trailapi-trailapi.p.rapidapi.com/?q-city-cont="+query+"&limit=25)";
+  //   return axios.get(queryURL)
+  //     .header("X-RapidAPI-Host", "trailapi-trailapi.p.rapidapi.com")
+  //     .header("X-RapidAPI-Key", "955275a486mshd82e401a3a0f228p141a7fjsnf9e9dc8720bb")
+  //     .end(function (result) {
+  //       console.log(result.status, result.headers, result.body);
+  //   }); 
+  // }
+  
