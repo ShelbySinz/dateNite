@@ -31,7 +31,7 @@ export default {
   //retrieves a movie from our external api
   getMovie : function(query){
     const MOVIE_API = "&apikey=trilogy";
-     return axios.get("http://www.omdbapi.com/?t="+query+MOVIE_API);
+     return axios.get("https://www.omdbapi.com/?t="+query+MOVIE_API);
   },
 
   //retrieves a restaurant location from our external api
