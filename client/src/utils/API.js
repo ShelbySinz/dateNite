@@ -2,21 +2,22 @@
 import axios from "axios";
 require("dotenv").config();
 
-
 export default {
   // Gets all saved dates
   saveDates: function(dateData) {
     return axios.post("/api/dates", dateData, {"Authorization": localStorage.getItem('jwtToken') });
-    
   },
+  
   // Gets a saved date with the given id
   getSavedDates: function() {
     return axios.get("/api/dates/"); 
   },
+
   // Deletes the saved date with the given id
   deleteDate: function(id) {
     return axios.delete("/api/dates/" + id);
   },
+
   // Saves a user to the database
   saveUser: function(userData) {
     return axios.post("/api/User", userData);
@@ -49,29 +50,8 @@ export default {
     const YOUR_API_KEY = "AIzaSyDFpd-2EoMstvbarr8ywlER8dEv2nzfQhY";
     return axios.get("https://cors-anywhere.herokuapp.com/"+
       "https://maps.googleapis.com/maps/api/place/textsearch/json?query=hiking+in+"+queryCity+"&key="+YOUR_API_KEY);
-    
-    
-    
-    // ("https://api.mapbox.com/geocoding/v5/mapbox.places/"
-    //   +queryCity+".json?&access_token="+MAPBOX_API+"&types=poi=outdoors");
 
-    // https://api.mapbox.com/geocoding/v5/mapbox.places/Boulder.json?country=us&access_token=[your_token]
   }
 };
 
-
-// hiking project url initial
-// return axios.get('http://www.hikingproject.com/data/get-trails?'+lat+"&"+lon+"&"+HIKE_API_KEY);
-
-  
-
-// getOutdoor : function(query) {
-  //   const queryURL = "https://trailapi-trailapi.p.rapidapi.com/?q-city-cont="+query+"&limit=25)";
-  //   return axios.get(queryURL)
-  //     .header("X-RapidAPI-Host", "trailapi-trailapi.p.rapidapi.com")
-  //     .header("X-RapidAPI-Key", "955275a486mshd82e401a3a0f228p141a7fjsnf9e9dc8720bb")
-  //     .end(function (result) {
-  //       console.log(result.status, result.headers, result.body);
-  //   }); 
-  // }
   
