@@ -14,6 +14,7 @@ function Home() {
             
             <Jumbotron>
                 <h1>Welcome to DateNite!</h1>
+                <h4>Stay In. Go Out. Enjoy.</h4>
             </Jumbotron>
                 <Row>
                     <Col size = "md-2"></Col>
@@ -67,7 +68,7 @@ function Home() {
                                 image={homePage[1].image}
                             >
                                 <br></br>
-                            <Link to="/dates/Notes">← Notes!</Link>
+                            <Link to="/dates/About">← About!</Link>
                             <br></br>
                             </Card>            
                     </Col>
