@@ -32,17 +32,15 @@ export default {
   //retrieves a movie from our external api
   getMovie : function(query){
     const MOVIE_API = "&apikey=trilogy";
-     return axios.get("http://www.omdbapi.com/?t="+query+MOVIE_API);
+     return axios.get("https://www.omdbapi.com/?t="+query+MOVIE_API);
   },
 
   //retrieves a restaurant location from our external api
   getRestaurant : function(type) {
-    const YOUR_API_KEY = "AIzaSyDFpd-2EoMstvbarr8ywlER8dEv2nzfQhY";
-    // return axios.get(`${'https://cors-anywhere.herokuapp.com/'}
-    //   https://maps.googleapis.com/maps/api/place/textsearch/json?query=${type}
-    //     `+"+restaurants+in+Denver&key="+YOUR_API_KEY);
-    return axios.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+type
-          +"+restaurants+in+Denver&key="+YOUR_API_KEY);
+     const YOUR_API_KEY = "AIzaSyDFpd-2EoMstvbarr8ywlER8dEv2nzfQhY"; //Google API
+    return axios.get("https://cors-anywhere.herokuapp.com/"+
+      "https://maps.googleapis.com/maps/api/place/textsearch/json?query="+type+
+        "+restaurants+in+Denver&key="+YOUR_API_KEY);
   },
 
   //feed user query into mapbox api to convert city name to lat/lon for hiking project api
