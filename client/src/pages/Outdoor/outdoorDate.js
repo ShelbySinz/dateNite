@@ -7,13 +7,13 @@ import API from "../../utils/API";
 import SaveBtn from "../../components/SaveBtn";
 import outdoorJson from "../../outdoor.json";
 import axios from "axios";
+
 //create component 
 class Outdoor extends Component {
 		//set state
 		state = {
 			outdoor: [],
       searchCity: "", 
-      searchState: "",
 			title: "",
 			type: "",
 			description: "",
@@ -34,8 +34,7 @@ class Outdoor extends Component {
 
     //handle api/query params function
 		handleApiSubmit = (queryCity) => {        
-			API.getCoordinates(queryCity).then( res => this.setState
-				({outdoor: res.data}));
+			API.getCoordinates(queryCity).then( res => this.setState({outdoor: res.data.results}));
       console.log(this.state.outdoor);
 		};
 		
@@ -43,9 +42,7 @@ class Outdoor extends Component {
 		handleFormSubmit = event => {
 			event.preventDefault();
       this.handleApiSubmit(this.state.searchCity);
-      // this.handleApiSubmit(this.state.searchState);
       console.log(this.state.searchCity);
-      // console.log(this.state.searchState);
 		};
     
     //save date function
@@ -70,10 +67,11 @@ class Outdoor extends Component {
 
 								</Col>
 								</Row>
-								<Row>
+								
+                {/* return pre made dates from outdoorDates.json */}
+                <Row>
 								 <Col size= "md-7">
-								 <List>
-                      
+								  <List>
                     {outdoorJson.map( dates => { 
                       return (
                         <ListItem key={dates.title}  >
@@ -104,53 +102,41 @@ class Outdoor extends Component {
                   <br></br>
                   
                 <Col size="md-5">
-                <form>
-                {/* <Input
-                    value={this.state.search}
-                    onChange={this.handleInputChange}
-                    name="search"
-                    placeholder="Boulder"
-                  /> */}
-                <Input
+                  <form>
+                  {/* grab user search value */}
+                  <Input
                     value={this.state.searchCity}
                     onChange={this.handleInputChange}
                     name="searchCity"
-                    placeholder="Jackson WY"
+                    placeholder="Seattle"
                   />
-                  {/* <Input
-                    value={this.state.searchState}
-                    onChange={this.handleInputChange}
-                    name="searchState"
-                    placeholder="Wyoming"
-                  />
-               */}
                   <FormBtn
                     onClick={this.handleFormSubmit}
                   >
                     Find Activities
                   </FormBtn>
                 </form>
-
+                <br></br>
                 
                 {/* return response here */}
                 {this.state.outdoor.length ? (
-                  <List>
-                    {this.state.outdoor.map(places => {
-                      console.log(places)
+                <List>
+                 {this.state.outdoor.map(result =>  {
+                  console.log(result)
+                  
+                  return (
+                    <ListItem key={result.id}>                          
+                      <strong>Name: {result.name}</strong> 
+                      <p>Location: {result.formatted_address}</p>                        
+                      <a className="float-right" href={"https://www.google.com/maps/place/" + result.formatted_address} target="_blank"><i className="fas fa-eye"></i></a>
+                      <a className="float-left" href={"mailto:?body= Address to"+ result.name + ":" + result.formatted_address} target="_top"><i className="far fa-envelope"></i></a>
+                    </ListItem>
 
-                      return (
-                        <ListItem key={places.id}>
-                          <strong>
-                            <h5 className="mb-1">{places.coordinates}</h5>
-                          </strong>
-
-
-                        </ListItem>
-                      );
-                    })}
-                  </List>
-                ) : (
-                  <h3>No Results</h3>
+                  );
+                })}
+              </List>
+            ) : (
+                <h3>No Results to Display</h3>
                 )}
               </Col>
             </Row>

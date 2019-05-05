@@ -43,7 +43,7 @@ export default {
         "+restaurants+in+Denver&key="+YOUR_API_KEY);
   },
 
-  //feed user query into mapbox api to convert city name to lat/lon for hiking project api
+  //feed user query into google api and pull back related hiking points of interest
   getCoordinates : function(queryCity) {
     const YOUR_API_KEY = "AIzaSyDFpd-2EoMstvbarr8ywlER8dEv2nzfQhY";
     return axios.get("https://cors-anywhere.herokuapp.com/"+
