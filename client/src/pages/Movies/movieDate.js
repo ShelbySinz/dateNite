@@ -119,6 +119,7 @@ class MoviesTv extends Component {
                       <a className="float-left" href={"mailto:?body= Name of Movie:" + this.state.movies.Title + " Plot: "+ this.state.movies.Plot} target="_top"><i className="far fa-envelope"></i></a> 
                     </ListItem>
                   </List>
+                  
               </Col>
             </Row>
           </Container>

@@ -127,7 +127,7 @@ class Outdoor extends Component {
                   return (
                     <ListItem key={result.id}>                          
                       <strong>Name: {result.name}</strong> 
-                      <p>Location: {result.formatted_address}</p>                        
+                      <p>Location: {result.formatted_address}</p>                      
                       <a className="float-right" href={"https://www.google.com/maps/place/" + result.formatted_address} target="_blank"><i className="fas fa-eye"></i></a>
                       <a className="float-left" href={"mailto:?body= Address to"+ result.name + ":" + result.formatted_address} target="_top"><i className="far fa-envelope"></i></a>
                     </ListItem>
