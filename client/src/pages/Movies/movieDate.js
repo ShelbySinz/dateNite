@@ -68,7 +68,6 @@ class MoviesTv extends Component {
                   <List>
                       
                     {movieJson.map( dates => {
-                      console.log(dates)
                       
                       return (
                         <ListItem key={dates.title}  >
@@ -104,30 +103,23 @@ class MoviesTv extends Component {
                     Find Movies
                   </FormBtn>
                 </form>
-                      <br></br>
-               
-                 
-                    <List>
-                    
-                     
-
-                     
-                        <ListItem key={this.state.movies.Title}  >
-                           
-                          <strong>Name: {this.state.movies.Title}</strong> 
-                          <p>Plot: {this.state.movies.Plot}</p>
-                           <p>Release Date: {this.state.movies.Released}</p>
-                           <br></br>
-
-                           <img src={this.state.movies.Poster} alt={this.state.movies.Title}></img>
-                           <br></br>
-                           <br></br>
-                         <a className="float-right"href={this.state.movies.Website} target="_blank"><i className="fas fa-eye"></i></a>
-                         <a className="float-left" href={"mailto:?body= Name of Movie:" + this.state.movies.Title + " Plot: "+ this.state.movies.Plot} target="_top"><i className="far fa-envelope"></i></a> 
-                        </ListItem>
-                      
-                  </List>
+                <br></br>
               
+                  <List>
+                    <ListItem key={this.state.movies.Title} >  
+                      <strong>Name: {this.state.movies.Title}</strong> 
+                      <p>Plot: {this.state.movies.Plot}</p>
+                      <p>Release Date: {this.state.movies.Released}</p>
+                      <br></br>
+
+                      <img src={this.state.movies.Poster} alt={this.state.movies.Title}></img>
+                      <br></br>
+                      <br></br>
+                      <a className="float-right"href={this.state.movies.Website} target="_blank"><i className="fas fa-eye"></i></a>
+                      <a className="float-left" href={"mailto:?body= Name of Movie:" + this.state.movies.Title + " Plot: "+ this.state.movies.Plot} target="_top"><i className="far fa-envelope"></i></a> 
+                    </ListItem>
+                  </List>
+                  
               </Col>
             </Row>
           </Container>

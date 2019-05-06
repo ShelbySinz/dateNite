@@ -7,14 +7,15 @@ import API from "../../utils/API";
 import SaveBtn from "../../components/SaveBtn";
 import outdoorJson from "../../outdoor.json";
 import axios from "axios";
+
 //create component 
 class Outdoor extends Component {
 		//set state
 		state = {
 			outdoor: [],
-			search: "", 
-			title:"",
-			type:"",
+      searchCity: "", 
+			title: "",
+			type: "",
 			description: "",
 			whatYouNeed: ""    
     };
@@ -32,17 +33,16 @@ class Outdoor extends Component {
 		};
 
     //handle api/query params function
-		handleApiSubmit = query => {        
-			API.getRestaurant(query).then( res => this.setState
-				({outdoor: res.data.results}));
+		handleApiSubmit = (queryCity) => {        
+			API.getCoordinates(queryCity).then( res => this.setState({outdoor: res.data.results}));
       console.log(this.state.outdoor);
 		};
 		
 		//handle form submit function
 		handleFormSubmit = event => {
 			event.preventDefault();
-			this.handleApiSubmit(this.state.search);
-			console.log(this.state.search);
+      this.handleApiSubmit(this.state.searchCity);
+      console.log(this.state.searchCity);
 		};
     
     //save date function
@@ -67,13 +67,12 @@ class Outdoor extends Component {
 
 								</Col>
 								</Row>
-								<Row>
-								 <Col size= "md-8">
-								 <List>
-                      
-                    {outdoorJson.map( dates => {
-                      console.log(dates)
-                      
+								
+                {/* return pre made dates from outdoorDates.json */}
+                <Row>
+								 <Col size= "md-7">
+								  <List>
+                    {outdoorJson.map( dates => { 
                       return (
                         <ListItem key={dates.title}  >
 
@@ -102,48 +101,43 @@ class Outdoor extends Component {
                   <br></br>
                   <br></br>
                   
-                 <Col size="md-6">
-                <form>
+                <Col size="md-5">
+                  <form>
+                  {/* grab user search value */}
                   <Input
-                    value={this.state.search}
+                    value={this.state.searchCity}
                     onChange={this.handleInputChange}
-                    name="search"
-                    placeholder="(Boulder, CO)"
+                    name="searchCity"
+                    placeholder="Seattle"
                   />
-              
                   <FormBtn
                     onClick={this.handleFormSubmit}
                   >
-                    Find Hikes
+                    Find Activities
                   </FormBtn>
                 </form>
-              </Col>
-              <Col size="md-6 sm-12">
-							{/* {this.state.recipes.length ? (
-                  <List>
-                    {this.state.recipes.map(food => {
-                      console.log(food)
-                      
-                      return (
-                        <ListItem key={food.recipe_id}  >
-                           
-                           <h5 className="mb-1">{food.title}</h5> 
-                           
-                          <br></br>
-                           <br></br>
-                           <img className={"img-fluid"} src={food.image_url} alt={food.title}></img>
-                           <br></br>
-                           <br></br>
-                           <a  className="float-right"  href={food.source_url} target="_blank"><i className="fas fa-eye"></i></a>
-                          <a className= "float-left"href={"mailto:?body= link to recipe:" + food.source_url} target="_top"><i className="far fa-envelope"></i></a>
-                          
-                        </ListItem>
-                      );
-                    })}
-                  </List>
-                ) : (
-                  <h3>No Results to Display</h3>
-                )} */}
+                <br></br>
+                
+                {/* return response here */}
+                {this.state.outdoor.length ? (
+                <List>
+                 {this.state.outdoor.map(result =>  {
+                  console.log(result)
+                  
+                  return (
+                    <ListItem key={result.id}>                          
+                      <strong>Name: {result.name}</strong> 
+                      <p>Location: {result.formatted_address}</p>                      
+                      <a className="float-right" href={"https://www.google.com/maps/place/" + result.formatted_address} target="_blank"><i className="fas fa-eye"></i></a>
+                      <a className="float-left" href={"mailto:?body= Address to"+ result.name + ":" + result.formatted_address} target="_top"><i className="far fa-envelope"></i></a>
+                    </ListItem>
+
+                  );
+                })}
+              </List>
+            ) : (
+                <h3>No Results to Display</h3>
+                )}
               </Col>
             </Row>
           </Container>

@@ -95,13 +95,13 @@ class AtHome extends Component {
                   <br>
                   </br>
                   <br></br>
-                 <Col size="md-5">
+                <Col size="md-5">
                 <form>
                   <Input style={{marginTop: 30 }}
                     value={this.state.search}
                     onChange={this.handleInputChange}
                     name="search"
-                    placeholder="(chicken)"
+                    placeholder="Chicken"
                   />
               
                   <FormBtn
@@ -112,7 +112,8 @@ class AtHome extends Component {
                 </form>
              
               
-               <br></br>
+               <br>
+               </br>
                 {this.state.recipes.length ? (
                   <List>
                     {this.state.recipes.map(food => {
@@ -121,13 +122,16 @@ class AtHome extends Component {
                       return (
                         <ListItem key={food.recipe_id}  >
                            
-                          <strong> <h5 className="mb-1">{food.title}</h5> </strong>
-                           
-                         
-                           <img style={{height:200, width:200}}className={"img-fluid"} src={food.image_url} alt={food.title}></img>
-                           <br></br>
-                           <br></br>
-                           <a  className="float-right"  href={food.source_url} target="_blank"><i className="fas fa-eye"></i></a>
+                          <strong> 
+                            <h5 className="mb-1">{food.title}</h5> 
+                          </strong>
+        
+                          <img style={{height:200, width:200}}className={"img-fluid"} src={food.image_url} alt={food.title}></img>
+                          <br>
+                          </br>
+                          <br>
+                          </br>
+                          <a  className="float-right"  href={food.source_url} target="_blank"><i className="fas fa-eye"></i></a>
                           <a className= "float-left"href={"mailto:?body= link to recipe:" + food.source_url} target="_top"><i className="far fa-envelope"></i></a>
                           
                         </ListItem>

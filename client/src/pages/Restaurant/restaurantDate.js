@@ -24,10 +24,6 @@ class Restaurant extends Component {
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
    };
 
-    componentDidMount() {
-      axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');   
-    };
-
     handleInputChange = event => {
       const { name, value } = event.target;
       this.setState({
