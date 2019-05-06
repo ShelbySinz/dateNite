@@ -13,7 +13,9 @@ class Saved extends Component {
   constructor(props) {
     super(props);
     this.state ={
-        saved: []
+        saved: [],
+        username: "",
+        userinfo: []
     };
   }
 
@@ -21,18 +23,27 @@ class Saved extends Component {
    componentDidMount(){
    
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
-     this.getSavedDates();
+     this.getSavedDates()
+     this.getUserInfo()
    }
 
    getSavedDates = () => {
        API.getSavedDates()
        .then(res => 
-        this.setState({saved: res.data}))
+       this.setState({saved: res.data, username: res.data[0].user.username}))
        console.log(this.state.saved)
    }
+  
+   getUserInfo = () => {
+     API.getUserInfo().then( res =>  this.setState({userinfo: res.data}))
+   }
+
+  //  , username: res.data[0].user.username
 
 
-
+  deleteUser = () => {
+    API.deleteUser().then( res => window.location.href="/login")
+  }
 
    deleteDate = id => {
     API.deleteDate(id)
@@ -50,10 +61,14 @@ class Saved extends Component {
             <Row>
               <Col size="md-12">
                 <Jumbotron>
-                  <h1>Your Saved Date Ideas!</h1>
-                  {localStorage.getItem('jwtToken') &&
-                <button class="btn btn-primary" onClick={this.logout}>Logout</button>
-              }
+                  
+                  <h1> Hello {this.state.userinfo.username}, </h1>
+                  <h3>here are your saved dates!</h3>
+                 <h2> {console.log(this.state.userinfo)}</h2>
+                  
+                {/* <h5>{`User Name:  ${this.state.userinfo.username}`}</h5> */}
+                
+              <h6 className= "float-right">Delete User <DeleteBtn onClick= {this.deleteUser} /> </h6>
                   </Jumbotron>
 
                   </Col>
@@ -78,7 +93,7 @@ class Saved extends Component {
                         
                    <DeleteBtn className="float-right" onClick={() => this.deleteDate(saved._id)} />
                    
-                   <a className="float-left" href={`mailto:?body= Your Saved Date: ` + saved.title + " description: "+ saved.description + "What you need: " + saved.whatYouNeed} target="_top"><i className="far fa-envelope"></i></a>
+                   <a className="float-left" href={`mailto: ${this.state.username}?body= Your Saved Date: ${saved.title} \n description: ${saved.description} What you need: ${saved.whatYouNeed}`} target="_top"><i className="far fa-envelope"></i></a>
                    </ListItem>
                           )  
                     })}

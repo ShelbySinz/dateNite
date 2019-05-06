@@ -42,5 +42,23 @@
     "whatYouNeed": "speaker, Pandora",
     "SuggestedRecipe": "Nachos"
     
+  },
+  {
+    "title": "Marshmallow Roast",
+    "type": "At-home",
+    "description":
+      "Grab some candles and roast some marshmellows because you don't know a person until you know how burnt they like their marshmellows!",
+    "whatYouNeed": "candles, Marshmallos, optional: s'mores goodies",
+    "SuggestedRecipe": "S'mores"
+    
+  },
+  {
+    "title": "Bake them Cookies",
+    "type": "At-home",
+    "description":
+      "get pre-made dough or spend some extra time together whipping up some homemade cookie dough",
+    "whatYouNeed": "cookie dough",
+    "SuggestedRecipe": "Cookies"
+    
   }
 ]

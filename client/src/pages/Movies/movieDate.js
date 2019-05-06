@@ -58,6 +58,7 @@ class MoviesTv extends Component {
               <Col size="md-12">
                 <Jumbotron>
                   <h1>Movies and Tv Date Ideas!</h1>
+                  <p>For the nights when you just want to cuddle and watch a great movie!</p>
                   </Jumbotron>
 
                   </Col>

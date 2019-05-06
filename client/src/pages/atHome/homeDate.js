@@ -58,6 +58,7 @@ class AtHome extends Component {
               <Col size="md-12">
                 <Jumbotron>
                   <h1>At Home Date Ideas!</h1>
+                  <p>For the nights when you just want to stay home</p>
                   </Jumbotron>
 
                   </Col>
