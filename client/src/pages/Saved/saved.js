@@ -13,7 +13,8 @@ class Saved extends Component {
   constructor(props) {
     super(props);
     this.state ={
-        saved: []
+        saved: [],
+        username: ""
     };
   }
 
@@ -27,7 +28,7 @@ class Saved extends Component {
    getSavedDates = () => {
        API.getSavedDates()
        .then(res => 
-        this.setState({saved: res.data}))
+        this.setState({saved: res.data, username: res.data[0].user.username}))
        console.log(this.state.saved)
    }
 
@@ -51,9 +52,12 @@ class Saved extends Component {
               <Col size="md-12">
                 <Jumbotron>
                   <h1>Your Saved Date Ideas!</h1>
-                  {localStorage.getItem('jwtToken') &&
-                <button class="btn btn-primary" onClick={this.logout}>Logout</button>
-              }
+                  {this.state.username.length ? (
+                <h5>{`User Name:  ${this.state.username}`}</h5>
+                
+              ):(
+                <h3>No User Info</h3>
+              )}
                   </Jumbotron>
 
                   </Col>

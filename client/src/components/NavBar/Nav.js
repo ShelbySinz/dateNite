@@ -1,7 +1,13 @@
-import React from "react";
+import React, {Component} from "react";
 
-function Nav() {
-  return (
+class Nav extends Component {
+  
+  logout = () => {
+    localStorage.removeItem('jwtToken');
+    window.location.reload();
+  }
+ render() {
+   return(
     <nav className="navbar navbar-expand-lg navbar-dark bg-info">
         <div className="dropdown">
          <a className="btn btn-light"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
@@ -16,7 +22,8 @@ function Nav() {
         <a className="dropdown-item" href="/dates/outdoors">Outdoors</a>
         <a className="dropdown-item" href="/dates/restaurants">Resaurants and Bars</a>
         <a className="dropdown-item" href="/dates/movies">Movies and TV</a>
-        <a className="dropdown-item" href="/dates/saved">Saved</a>
+        <a className="dropdown-item" href="/dates/saved">Profile Page</a>
+        <a className="dropdown-item" onClick={localStorage.getItem('jwtToken') && this.logout} href= "/">Logout </a>
       </div>
     </div>
 
@@ -24,5 +31,5 @@ function Nav() {
     
   );
 }
-
+}
 export default Nav;
