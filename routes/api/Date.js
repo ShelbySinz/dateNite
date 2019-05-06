@@ -15,6 +15,12 @@ router
   // .get(datesController.findById)
   // .post(datesController.create)
   .delete(datesController.remove);
+
+  router.route("/getinfo").all(passport.authenticate('jwt', {session: false}))
+  .get(datesController.findUser)
+
+  router.route("/deleteUser").all(passport.authenticate('jwt', {session: false}))
+  .delete(datesController.deleteUser)
   
 getToken = function (headers) {
   if (headers && headers.authorization) {

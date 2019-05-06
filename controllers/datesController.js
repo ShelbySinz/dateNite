@@ -9,6 +9,20 @@ module.exports = {
       .then(dbModel => {console.log(dbModel); res.json(dbModel)})})
    
   },
+
+  findUser: function(req, res){
+    db.User.findOne({username: req.user.username}).then(dbUsers => res.json(dbUsers))
+    
+    
+  },
+  deleteUser: function(req, res){
+    db.User.findOneAndRemove({username: req.user.username}).then(dbUsers => dbUsers.remove()).then(dbModel => res.json(dbModel))
+    
+    
+  },
+
+
+
   remove: function(req, res) {
     db.Dates
       .findById({ _id: req.params.id })

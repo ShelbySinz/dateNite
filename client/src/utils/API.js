@@ -10,7 +10,15 @@ export default {
   
   // Gets a saved date with the given id
   getSavedDates: function() {
-    return axios.get("/api/dates/"); 
+    return axios.get("/api/dates"); 
+  },
+
+  getUserInfo : function(){
+    return axios.get("/api/dates/getinfo")
+  },
+  
+  deleteUser: function(){
+    return axios.delete("/api/dates/deleteUser")
   },
 
   // Deletes the saved date with the given id
@@ -19,9 +27,7 @@ export default {
   },
 
   // Saves a user to the database
-  saveUser: function(userData) {
-    return axios.post("/api/User", userData);
-  },
+
 
   //retrieves a recipe from our external api
   getRecipe : function(query){

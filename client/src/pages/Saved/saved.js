@@ -14,7 +14,8 @@ class Saved extends Component {
     super(props);
     this.state ={
         saved: [],
-        username: ""
+        username: "",
+        userinfo: []
     };
   }
 
@@ -22,7 +23,8 @@ class Saved extends Component {
    componentDidMount(){
    
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
-     this.getSavedDates();
+     this.getSavedDates()
+     this.getUserInfo()
    }
 
    getSavedDates = () => {
@@ -31,9 +33,17 @@ class Saved extends Component {
        this.setState({saved: res.data, username: res.data[0].user.username}))
        console.log(this.state.saved)
    }
-
+  
+   getUserInfo = () => {
+     API.getUserInfo().then( res =>  this.setState({userinfo: res.data}))
+   }
 
   //  , username: res.data[0].user.username
+
+
+  deleteUser = () => {
+    API.deleteUser().then( res => window.location.href="/login")
+  }
 
    deleteDate = id => {
     API.deleteDate(id)
@@ -51,13 +61,14 @@ class Saved extends Component {
             <Row>
               <Col size="md-12">
                 <Jumbotron>
-                  <h1>Your Saved Date Ideas!</h1>
-                  {this.state.username.length ? (
-                <h5>{`User Name:  ${this.state.username}`}</h5>
+                  
+                  <h1> Hello {this.state.userinfo.username}, </h1>
+                  <h3>here are your saved dates!</h3>
+                 <h2> {console.log(this.state.userinfo)}</h2>
+                  
+                {/* <h5>{`User Name:  ${this.state.userinfo.username}`}</h5> */}
                 
-              ):(
-                <h3>No User Info</h3>
-              )}
+              <h6 className= "float-right">Delete User <DeleteBtn onClick= {this.deleteUser} /> </h6>
                   </Jumbotron>
 
                   </Col>
