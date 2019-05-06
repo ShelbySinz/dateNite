@@ -28,12 +28,12 @@ class Saved extends Component {
    getSavedDates = () => {
        API.getSavedDates()
        .then(res => 
-        this.setState({saved: res.data, username: res.data[0].user.username}))
+       this.setState({saved: res.data, username: res.data[0].user.username}))
        console.log(this.state.saved)
    }
 
 
-
+  //  , username: res.data[0].user.username
 
    deleteDate = id => {
     API.deleteDate(id)
@@ -82,7 +82,7 @@ class Saved extends Component {
                         
                    <DeleteBtn className="float-right" onClick={() => this.deleteDate(saved._id)} />
                    
-                   <a className="float-left" href={`mailto:?body= Your Saved Date: ` + saved.title + " description: "+ saved.description + "What you need: " + saved.whatYouNeed} target="_top"><i className="far fa-envelope"></i></a>
+                   <a className="float-left" href={`mailto: ${this.state.username}?body= Your Saved Date: ${saved.title} \n description: ${saved.description} What you need: ${saved.whatYouNeed}`} target="_top"><i className="far fa-envelope"></i></a>
                    </ListItem>
                           )  
                     })}

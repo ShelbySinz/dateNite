@@ -31,6 +31,22 @@
     
   },
   {
+    "title": "American Duos",
+    "type": "Movies&Tv",
+    "description":
+      "Pick your favorite movie star duos and begin watching from earliest release date!",
+    "whatYouNeed": "redbox/ movies needed"
+    
+  },
+  {
+    "title": "Fright night",
+    "type": "Movies&Tv",
+    "description":
+      "Get ready to hold each other tight as you watch a scary movie.",
+    "whatYouNeed": "redbox/ movies needed"
+    
+  },
+  {
     "title": "IDK?...",
     "type": "Movies&Tv",
     "description":

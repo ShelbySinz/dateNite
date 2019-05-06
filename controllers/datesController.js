@@ -4,8 +4,8 @@ const db = require("../models");
 module.exports = {
   findByUsername: function(req, res) {
 
-    db.User.find({username: req.user.username}).then(dbUser => {console.log(dbUser),
-      db.Dates.find({user: dbUser[0]._id})
+    db.User.findOne({username: req.user.username}).then(dbUser => {console.log(dbUser),
+      db.Dates.find({user: dbUser._id}).populate("user")
       .then(dbModel => {console.log(dbModel); res.json(dbModel)})})
    
   },
