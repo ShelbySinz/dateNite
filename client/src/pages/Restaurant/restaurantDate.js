@@ -7,7 +7,14 @@ import API from "../../utils/API";
 import restaurantJson from "../../restaurants.json";
 import SaveBtn from "../../components/SaveBtn";
 import axios from "axios";
-
+const style ={
+  h1 :{
+      fontSize: "80px"
+  },
+  h2:{
+        fontSize:"25px"
+  }
+}
 
 class Restaurant extends Component {
 
@@ -54,8 +61,8 @@ class Restaurant extends Component {
             <Row>
               <Col size="md-12">
                 <Jumbotron>
-                  <h1>Restaurant Date Ideas!</h1>
-                  <p>Spend the night out and spend some money! Need help looking up restaurants? Use the search bar below - just enter the type of foods you'd like to eat!</p>
+                  <h1 style={style.h1}>Restaurant Date Ideas!</h1>
+                  <p style={style.h2}>Spend the night out and spend some money! Need help looking up restaurants? Use the search bar below - just enter the type of foods you'd like to eat!</p>
                   </Jumbotron>
 
                   </Col>

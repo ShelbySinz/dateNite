@@ -9,6 +9,16 @@ import ReactDOM from 'react-dom';
 
 import axios from 'axios';
 
+
+const style ={
+  h1 :{
+      fontSize: "80px"
+  },
+  h2:{
+        fontSize:"50px"
+  }
+}
+
 class Saved extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +28,7 @@ class Saved extends Component {
         userinfo: []
     };
   }
-
+ 
     
    componentDidMount(){
    
@@ -62,8 +72,8 @@ class Saved extends Component {
               <Col size="md-12">
                 <Jumbotron>
                   
-                  <h1> Hello {this.state.userinfo.username}, </h1>
-                  <h3>here are your saved dates!</h3>
+                  <h1 style={style.h1}> Hello {this.state.userinfo.username}, </h1>
+                  <h3 style={style.h2}>here are your saved dates!</h3>
                  <h2> {console.log(this.state.userinfo)}</h2>
                   
                 {/* <h5>{`User Name:  ${this.state.userinfo.username}`}</h5> */}

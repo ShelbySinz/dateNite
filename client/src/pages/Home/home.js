@@ -7,15 +7,22 @@ import homePage from "../../tiles_homePage.json"
 
 
 function Home() {
-
+    const style ={
+        h1 :{
+            fontSize: "80px"
+        },
+        h2:{
+              fontSize:"50px"
+        }
+    }
       
         return(
 
             <Container fluid>
             
             <Jumbotron>
-                <h1>Welcome to DateNite!</h1>
-                <h4>Stay In. Go Out. Enjoy.</h4>
+                <h1 style={style.h1}>Welcome to DateNite!</h1>
+                <h4 style={style.h2}>Stay In. Go Out. Enjoy.</h4>
             </Jumbotron>
                 <Row>
                     <Col size = "md-2"></Col>

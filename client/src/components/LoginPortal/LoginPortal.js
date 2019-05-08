@@ -3,7 +3,16 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './LoginPortal.css';
+import jumbotron from "../Jumbotron/Jumbotron";
+import Jumbotron from '../Jumbotron/Jumbotron';
 
+
+const style = {
+  h1: {
+    fontSize: "80px",
+    height: "80px"
+  }
+}
 class LoginPortal extends Component {
 
   constructor() {
@@ -42,7 +51,10 @@ class LoginPortal extends Component {
   render() {
     const { username, password, message } = this.state;
     return (
+      
       <div class="container">
+
+          <Jumbotron><p style={style.h1}>DateNite</p></Jumbotron>
         <form class="form-signin" onSubmit={this.onSubmit}>
           {message !== '' &&
             <div class="alert alert-warning alert-dismissible" role="alert">
