@@ -52,7 +52,7 @@ class Saved extends Component {
 
 
   deleteUser = () => {
-    API.deleteUser().then( res => window.location.href="/login")
+    API.deleteUser().then( res => window.location.href="/")
   }
 
    deleteDate = id => {

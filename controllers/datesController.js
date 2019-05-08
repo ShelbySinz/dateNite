@@ -4,25 +4,23 @@ const db = require("../models");
 module.exports = {
   findByUsername: function(req, res) {
 
-    db.User.findOne({username: req.user.username}).then(dbUser => {console.log(dbUser),
+    db.User.findOne({username: req.user.username})
+    .then(dbUser => {console.log(dbUser),
       db.Dates.find({user: dbUser._id}).populate("user")
-      .then(dbModel => {console.log(dbModel); res.json(dbModel)})})
-   
+      .then(dbModel => {console.log(dbModel); res.json(dbModel)})})  
   },
 
   findUser: function(req, res){
-    db.User.findOne({username: req.user.username}).then(dbUsers => res.json(dbUsers))
-    
-    
+    db.User.findOne({username: req.user.username})
+    .then(dbUsers => res.json(dbUsers))   
   },
   deleteUser: function(req, res){
-    db.User.findOneAndRemove({username: req.user.username}).then(dbUsers => dbUsers.remove()).then(dbModel => res.json(dbModel))
-    
-    
+    db.User
+      .findOne({username: req.user.username})    
+      .then(dbUsers => dbUsers.remove())
+      //.then(dbModel => res.json(dbModel)) 
+      .then(dbModel => {console.log("WE ARE TRYING TO DELETE THIS ONE", dbModel); res.json(dbModel)})  
   },
-
-
-
   remove: function(req, res) {
     db.Dates
       .findById({ _id: req.params.id })
@@ -30,7 +28,6 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-
   create: function(req, res){
     // console.log("inside controller create", req.body)
    console.log("USERNAME " , req.user.username);

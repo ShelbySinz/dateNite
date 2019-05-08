@@ -8,6 +8,14 @@ router.route("/")
   .get(datesController.findByUsername)
   .post(datesController.create);
 
+//User Info 
+router.route("/getinfo").all(passport.authenticate('jwt', {session: false}))
+  .get(datesController.findUser)
+
+//Delete User Info 
+router.route("/deleteUser").all(passport.authenticate('jwt', {session: false}))
+  .delete(datesController.deleteUser)
+
 // Matches with "/api/dates/:id"
 router
   .route("/:id")
@@ -15,13 +23,7 @@ router
   // .get(datesController.findById)
   // .post(datesController.create)
   .delete(datesController.remove);
-
-  router.route("/getinfo").all(passport.authenticate('jwt', {session: false}))
-  .get(datesController.findUser)
-
-  router.route("/deleteUser").all(passport.authenticate('jwt', {session: false}))
-  .delete(datesController.deleteUser)
-  
+ 
 getToken = function (headers) {
   if (headers && headers.authorization) {
     var parted = headers.authorization.split(' ');
