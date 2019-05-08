@@ -8,6 +8,17 @@ import HomeJson from "../../athome.json";
 import SaveBtn from "../../components/SaveBtn";
 import axios from "axios"
 
+
+
+const style ={
+  h1 :{
+      fontSize: "80px"
+  },
+  h2:{
+        fontSize:"30px"
+  }
+}
+
 class AtHome extends Component {
     state = {
         recipes: [],
@@ -57,8 +68,8 @@ class AtHome extends Component {
             <Row>
               <Col size="md-12">
                 <Jumbotron>
-                  <h1>At Home Date Ideas!</h1>
-                  <p>For the nights when you just want to stay home</p>
+                  <h1 style={style.h1}>At Home Date Ideas!</h1>
+                  <p style={style.h2}>For the nights when you just want to stay home</p>
                   </Jumbotron>
 
                   </Col>

@@ -8,6 +8,16 @@ import SaveBtn from "../../components/SaveBtn";
 import outdoorJson from "../../outdoor.json";
 import axios from "axios";
 
+
+const style ={
+  h1 :{
+      fontSize: "80px"
+  },
+  h2:{
+        fontSize:"25px"
+  }
+}
+
 //create component 
 class Outdoor extends Component {
 		//set state
@@ -60,8 +70,8 @@ class Outdoor extends Component {
 					<Row>
 						<Col size="md-12">
 							<Jumbotron>
-								<h1>Outdoor Date Ideas!</h1>
-								<p>Spend some time outside and get to know eachother! Use the search bar below to find the best hiking 
+								<h1 style={style.h1}>Outdoor Date Ideas!</h1>
+								<p style={style.h2}>Spend some time outside and get to know eachother! Use the search bar below to find the best hiking 
 									trails near you or try one of our crafted activities!</p>
 								</Jumbotron>
 
